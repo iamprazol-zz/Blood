@@ -22,7 +22,10 @@ Route::get('request/{id}' , [
 	'as' => 'request'
 ]);
 
-
+Route::get('groups' , [
+	'uses' => 'GroupsController@index' ,
+	'as' => 'groups.index'
+]);
 
 
 
