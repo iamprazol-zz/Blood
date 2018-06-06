@@ -12,14 +12,14 @@ class GroupsTableSeeder extends Seeder
      */
     public function run()
     {
-        $g1 = ['b_group' => 'AB-' , 'slug' => str_slug('AB-')];
-		$g2 = ['b_group' => 'AB+' , 'slug' => str_slug('AB+')];
-		$g3 = ['b_group' => 'B-' , 'slug' => str_slug('B-')];
-		$g4 = ['b_group' => 'B+' , 'slug' => str_slug('A+')];
-		$g5 = ['b_group' => 'A-' , 'slug' => str_slug('A-')];
-		$g6 = ['b_group' => 'A+' , 'slug' => str_slug('A+')];
-		$g7 = ['b_group' => 'O-' , 'slug' => str_slug('O-')];
-		$g8 = ['b_group' => 'O+' , 'slug' => str_slug('O+')];
+        $g1 = ['b_group' => 'AB-' , 'slug' => str_slug('AB negative')];
+		$g2 = ['b_group' => 'AB+' , 'slug' => str_slug('AB positive')];
+		$g3 = ['b_group' => 'B-' , 'slug' => str_slug('B negative')];
+		$g4 = ['b_group' => 'B+' , 'slug' => str_slug('B positive')];
+		$g5 = ['b_group' => 'A-' , 'slug' => str_slug('A negative')];
+		$g6 = ['b_group' => 'A+' , 'slug' => str_slug('A positive')];
+		$g7 = ['b_group' => 'O-' , 'slug' => str_slug('O negative')];
+		$g8 = ['b_group' => 'O+' , 'slug' => str_slug('O positive')];
 
 
 		Groups::create($g1);

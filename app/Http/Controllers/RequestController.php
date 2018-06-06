@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Requests;
+use Session;
 
 class RequestController extends Controller
 {
@@ -13,6 +14,7 @@ class RequestController extends Controller
     	return view('request.show')->with('request' , $req);
 
     }
+
 
 
 

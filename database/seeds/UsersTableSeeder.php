@@ -17,7 +17,8 @@ class UsersTableSeeder extends Seeder
 			'email' => 'admin@blood.com' ,
 			'admin' => 1 ,
 			'avatar' => asset('avatars/avatar.png') ,
-			'b_group' => 'A+'
+			'b_group' => 'A+',
+			'mobile' => 9821256117
 		]);
 
 
@@ -27,7 +28,8 @@ class UsersTableSeeder extends Seeder
 			'password' => bcrypt('prajjwal') ,
 			'email' => 'iamprazol@blood.com' ,
 			'avatar' => asset('avatars/avatar.png') ,
-			'b_group' => 'B+'
+			'b_group' => 'B+',
+			'mobile' => 9845690436
 		]);
 
 		App\Users::create([
@@ -35,7 +37,8 @@ class UsersTableSeeder extends Seeder
 			'password' => bcrypt('anjaan') ,
 			'email' => 'anjaan@blood.com' ,
 			'avatar' => asset('avatars/avatar.png') ,
-			'b_group' => 'O+'
+			'b_group' => 'O+',
+			'mobile' => 9847004480
 		]);
     }
 }
