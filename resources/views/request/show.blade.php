@@ -7,8 +7,13 @@
 </head>
 
 <body>
+<b>Blood type :</b><p>{{ $request->b_group }}</p>
 
-<b>{{ $request->contents }}</b>
+<b>Case : </b><p>{{ $request->contents }}</p>
+
+<b>Required till : </b><p>{{ $request->required_till }}</p>
+
+
 
 </body>
 </html>
