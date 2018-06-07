@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
@@ -39,6 +39,14 @@
                             </div>
                         </div>
 
+                         <div class="form-group row">
+                            <label for="user_name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="user_name" type="text" class="form-control" name="user_name" required>
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
@@ -58,6 +66,31 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                         <div class="form-group row">
+                            <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="pmobile" type="number" class="form-control" name="mobile" required>
+                            </div>
+
+                        </div>
+
+                         <div class="form-group row">
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="gender" type="" class="form-control" name="Gender" required>
+                            </div>
+                        </div>
+
+                         <div class="form-group row">
+                            <label for="b_group" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="b_group" type="dropdown" class="form-control" name="blood_group" required>
                             </div>
                         </div>
 

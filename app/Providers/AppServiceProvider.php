@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use View;
 use Illuminate\Support\ServiceProvider;
 use App\Groups;
@@ -15,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
 		View::share('groups' , Groups::all());
     }
 
