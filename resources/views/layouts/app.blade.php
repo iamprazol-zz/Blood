@@ -67,9 +67,47 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+
+
+        <div class="container">
+
+            <div class="col-md-4">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+
+                        Blood Groups
+
+                    </div>
+
+                    <div class="panel-body">
+
+                        <ul class="list-group">
+
+                            @foreach($groups as $group)
+
+                                <li class="list-group-item">
+
+                                    {{ $group->b_group }}
+
+                                </li>
+
+                            @endforeach
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-8">
+
+                @yield('content')
+
+            </div>
+        </div>
     </div>
 </body>
 </html>

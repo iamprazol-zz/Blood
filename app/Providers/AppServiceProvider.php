@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use View;
 use Illuminate\Support\ServiceProvider;
+use App\Groups;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+		View::share('groups' , Groups::all());
     }
 
     /**
