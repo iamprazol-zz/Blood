@@ -17,8 +17,9 @@ class CreateRequestsTable extends Migration
             $table->increments('id');
 
             $table->integer('donor_id')->unsigned();
-            $table->integer('blood_id')->unsigned();
             $table->text('contents');
+            $table->text('b_group');
+            $table->date('required_till');
 
 			$table->timestamps();
         });

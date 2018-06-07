@@ -15,6 +15,8 @@ class UsersTableSeeder extends Seeder
 			'name' => 'admin' ,
 			'password' => bcrypt('admin') ,
 			'email' => 'admin@blood.com' ,
+			'gender' => 'Female',
+			'age' => 45 ,
 			'admin' => 1 ,
 			'avatar' => asset('avatars/avatar.png') ,
 			'b_group' => 'A+',
@@ -27,6 +29,8 @@ class UsersTableSeeder extends Seeder
 			'name' => 'Prajjwal' ,
 			'password' => bcrypt('prajjwal') ,
 			'email' => 'iamprazol@blood.com' ,
+			'gender' => 'Male' ,
+			'age' => 22,
 			'avatar' => asset('avatars/avatar.png') ,
 			'b_group' => 'B+',
 			'mobile' => 9845690436
@@ -36,6 +40,8 @@ class UsersTableSeeder extends Seeder
 			'name' => 'Anjaan' ,
 			'password' => bcrypt('anjaan') ,
 			'email' => 'anjaan@blood.com' ,
+			'gender' => 'Male' ,
+			'age' => 22,
 			'avatar' => asset('avatars/avatar.png') ,
 			'b_group' => 'O+',
 			'mobile' => 9847004480
