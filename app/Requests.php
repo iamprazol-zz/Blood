@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Requests extends Model
 {
-	protected $fillable = ['donor_id' , 'blood_id' , 'contents'];
+	protected $fillable = ['user_id' , 'contents' , 'b_group' , 'required_till'];
 
-	public function users(){
-		return $this->belongsTo('App\Users');
+	public function user(){
+		return $this->belongsTo('App\User');
 	}
 
 	public function groups(){

@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
 
             $table->string('name');
-            $table->string('avatar');
+            $table->string('avatar')->default('avatar.png');
             $table->string('gender');
             $table->integer('age') ;
             $table->boolean('admin')->default(0);
