@@ -73,7 +73,7 @@
                             <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
 
                             <div class="col-md-6">
-                                <input id="pmobile" type="number" class="form-control" name="mobile" required>
+                                <input id="mobile" type="text" class="form-control" name="mobile" required>
                             </div>
 
                         </div>
@@ -82,7 +82,7 @@
                             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
 
                             <div class="col-md-6">
-                                <input id="gender" type="" class="form-control" name="Gender" required>
+                                <input id="gender" type="" class="form-control" name="gender" required>
                             </div>
                         </div>
 
@@ -93,6 +93,15 @@
                                 <input id="b_group" type="dropdown" class="form-control" name="blood_group" required>
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="age" type="text" class="form-control" name="age" required>
+                            </div>
+                        </div>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

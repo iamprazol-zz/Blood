@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use App\Groups;
-use App\Users;
+use App\User;
 
 class GroupsController extends Controller
 {

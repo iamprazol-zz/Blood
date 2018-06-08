@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-		App\Users::create([
+		App\User::create([
 			'name' => 'admin' ,
 			'password' => bcrypt('admin') ,
 			'email' => 'admin@blood.com' ,
@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
 
 
 
-		App\Users::create([
+		App\User::create([
 			'name' => 'Prajjwal' ,
 			'password' => bcrypt('prajjwal') ,
 			'email' => 'iamprazol@blood.com' ,
@@ -36,7 +36,7 @@ class UsersTableSeeder extends Seeder
 			'mobile' => 9845690436
 		]);
 
-		App\Users::create([
+		App\User::create([
 			'name' => 'Anjaan' ,
 			'password' => bcrypt('anjaan') ,
 			'email' => 'anjaan@blood.com' ,

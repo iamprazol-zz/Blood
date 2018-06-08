@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Groups extends Model
 {
 
-	public function users(){
-		return $this->hasMany('App\Users');
+	public function user(){
+		return $this->hasMany('App\User');
 	}
 
 	public  function requests(){

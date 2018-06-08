@@ -16,7 +16,7 @@ class CreateRequestsTable extends Migration
         Schema::create('requests', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('donor_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->text('contents');
             $table->text('b_group');
             $table->date('required_till');

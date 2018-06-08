@@ -17,17 +17,24 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('request/{id}' , [
-	'uses' => 'RequestController@show' ,
-	'as' => 'request'
+Route::get('/forum' , [
+	'uses' => 'ForumsController@index' ,
+	'as' => 'forum.index'
 ]);
-
-Route::get('groups' , [
-	'uses' => 'GroupsController@index' ,
-	'as' => 'groups.index'
-]);
-
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+Route::group(['middleware' => 'auth'] , function () {
+
+	Route::get('request/{id}', [
+		'uses' => 'RequestController@show',
+		'as' => 'request'
+	]);
+
+	Route::get('groups', [
+		'uses' => 'GroupsController@index',
+		'as' => 'groups.index'
+	]);
+});
+
