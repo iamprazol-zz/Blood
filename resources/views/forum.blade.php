@@ -4,7 +4,7 @@
 
     <div class="container">
 
-        <div class="class col-md-4">
+        <div class="class col-md-10 ml-auto">
 
             <div class="panel panel-default">
 
@@ -36,7 +36,7 @@
 
         </div>
 
-        <div class="class col-md-8">
+        <div class="class col-md-10 ml-auto">
 
             @foreach($requests as $request)
 

@@ -73,7 +73,7 @@
                             <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
 
                             <div class="col-md-6">
-                                <input id="mobile" type="text" class="form-control" name="mobile" required>
+                                <input id="mobile" type="large number" class="form-control" name="mobile" required>
                             </div>
 
                         </div>
@@ -82,7 +82,11 @@
                             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
 
                             <div class="col-md-6">
-                                <input id="gender" type="" class="form-control" name="gender" required>
+                                <select class="custom-select" id="form1-state">
+                                  <option value="" selected="">Choose One</option>
+                                  <option value="1">Male</option>
+                                  <option value="2">Female</option>
+                              </select>
                             </div>
                         </div>
 
@@ -90,7 +94,17 @@
                             <label for="b_group" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
 
                             <div class="col-md-6">
-                                <input id="b_group" type="dropdown" class="form-control" name="blood_group" required>
+                                <select class="custom-select" id="form1-state">
+                                  <option value="" selected="">Choose One</option>
+                                  <option value="1">A+</option>
+                                  <option value="2">A-</option>
+                                  <option value="3">B+</option>
+                                  <option value="4">B-</option>
+                                  <option value="5">AB+</option>
+                                  <option value="6">AB-</option>
+                                  <option value="7">O+</option>
+                                  <option value="8">O-</option>
+                                </select>
                             </div>
                         </div>
 
