@@ -36,7 +36,15 @@
 
         </div>
 
+<<<<<<< HEAD
         <div class="card col-md-8 ml-auto">
+=======
+
+        <div class="class col-md-10 ml-auto">
+>>>>>>> ca03e81c84199095543e9e82eaa9b9ec8be9827e
+
+        <div class="class col-md-4">
+
 
             @foreach($requests as $request)
 
@@ -45,7 +53,7 @@
                     <div class="card-header">
 
 
-                        <span><b>{{ $requests->user->avatar }}</b> , {{ $requests->created_at->diffForHumans() }}</span>
+                        <span><b>{{ $requests->users->avatar }}</b> , {{ $requests->created_at->diffForHumans() }}</span>
 
                     </div>
 

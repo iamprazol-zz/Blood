@@ -13,6 +13,6 @@ class Requests extends Model
 	}
 
 	public function groups(){
-		return $this->belongsTo('App/Requests');
+		return $this->belongsTo('App\Requests');
 	}
 }
