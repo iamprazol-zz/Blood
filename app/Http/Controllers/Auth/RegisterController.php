@@ -73,6 +73,7 @@ class RegisterController extends Controller
 				'gender' => $data['gender'],
 				'b_group' => $data['blood_group'],
 				'age' => $data['age']
+
 			]);
 
 		}

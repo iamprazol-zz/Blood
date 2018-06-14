@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/css/shards.css">
   <link rel="stylesheet" href="/css/shards-demo.css">
 </head>
-<body>
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -31,38 +31,32 @@
                         <li><a class="nav-link" href="#">Service</a></li>
                         <li><a class="nav-link" href="#">Camps</a></li>
                         <li><a class="nav-link" href="#">Portfolio</a></li>
-                        <li><a class="nav-link" href="#">Request</a></li>
+                        <li><a class="nav-link" href="request">Request</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <div class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}<span class="caret"></span></a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
                             </li>
                         @endguest
+                    </div>
                     </ul>
                 </div>
             </div>
         </nav>
+
 
 
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Groups;
+use Carbon\Carbon;
 
 class GroupsTableSeeder extends Seeder
 {
