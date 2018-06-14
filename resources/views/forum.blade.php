@@ -36,11 +36,11 @@
 
         </div>
 
-<<<<<<< HEAD
+
         <div class="class col-md-10 ml-auto">
-=======
+
         <div class="class col-md-4">
->>>>>>> send
+
 
             @foreach($requests as $request)
 

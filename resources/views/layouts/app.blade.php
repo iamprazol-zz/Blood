@@ -27,7 +27,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-<<<<<<< HEAD
+
             <div class="navbar-collapse mr-auto collapse show" id="navbarNavDropdown-5">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
@@ -64,7 +64,7 @@
                         </li>
                     @endguest
                 </ul>
-=======
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
@@ -95,7 +95,7 @@
                     </div>
                     </ul>
                 </div>
->>>>>>> send
+
             </div>
         
         </nav>
