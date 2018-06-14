@@ -27,9 +27,19 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'] , function () {
 
-	Route::get('request/{id}', [
+	Route::get('request/show', [
 		'uses' => 'RequestController@show',
-		'as' => 'request'
+		'as' => 'request.show'
+	]);
+
+	Route::post('request/store' , [
+		'uses' => 'RequestController@store' ,
+		'as' => 'request.store'
+	]);
+
+	Route::get('request/create', [
+		'uses' => 'RequestController@create',
+		'as' => 'request.create'
 	]);
 
 	Route::get('groups', [
@@ -38,24 +48,3 @@ Route::group(['middleware' => 'auth'] , function () {
 	]);
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/request','RequestController@show')->name('request');
-
-Auth::routes();
-
-Route::get('/request','RequestController@show')->name('request');
-
-
-
-Auth::routes();
-
-Route::get('/request/create.blade','RequestController@create')->name('request/create');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

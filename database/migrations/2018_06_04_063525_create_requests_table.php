@@ -18,7 +18,7 @@ class CreateRequestsTable extends Migration
 
             $table->integer('user_id')->unsigned();
             $table->text('contents');
-            $table->text('b_group');
+            $table->string('b_group');
             $table->date('required_till');
 
 			$table->timestamps();

@@ -2,19 +2,19 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="body">
 
-        <div class="class col-md-10 ml-auto">
+        <div class="card col-md-8 ">
 
-            <div class="panel panel-default">
+            
 
-                <div class="panel-heading">
+                <div class="card-header">
 
                     Blood Groups
 
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
 
                     <ul class="list-group">
 
@@ -32,28 +32,27 @@
 
                 </div>
 
-            </div>
+            
 
         </div>
 
 
-        <div class="class col-md-10 ml-auto">
+        <div class="card col-md-8 ml-auto">
 
-        <div class="class col-md-4">
 
 
             @foreach($requests as $request)
 
-                <div class="panel panel-default">
+                <div class="card card-deck">
 
-                    <div class="panel-heading">
+                    <div class="card-header">
 
 
-                        <span><b>{{ $requests->users->avatar }}</b> , {{ $requests->created_at->diffForHumans() }}</span>
+                        <span><b>{{ $requests->user->avatar }}</b> , {{ $requests->created_at->diffForHumans() }}</span>
 
                     </div>
 
-                    <div class="panel-body">
+                    <div class="card-body">
 
                         <p class="text-center">
 
@@ -63,7 +62,7 @@
 
                     </div>
 
-                    <div class="panel-footer">
+                    <div class="card-footer">
 
                         <span>
 

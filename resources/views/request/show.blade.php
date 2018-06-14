@@ -1,19 +1,17 @@
-<!doctype html>
-<html lang="en-US">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Requests</title>
-</head>
+@extends('layouts.app')
 
-<body>
-<b>Blood type :</b><p>{{ $request->b_group }}</p>
+@section('content')
 
-<b>Case : </b><p>{{ $request->contents }}</p>
+    <a href="{{ route('request.create') }}" class="form-control btn btn-primary">Request for blood</a>
+    <hr>
 
-<b>Required till : </b><p>{{ $request->required_till }}</p>
+    @foreach($request as $req)
+    <b>Blood type :</b><p>{{ $req->b_group }}</p>
+
+    <b>Case : </b><p>{{ $req->contents }}</p>
+
+    <b>Required till : </b><p>{{ $req->required_till }}</p>
+@endforeach
 
 
-
-</body>
-</html>
+@endsection
