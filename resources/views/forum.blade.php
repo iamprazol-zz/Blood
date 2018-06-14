@@ -48,7 +48,7 @@
                     <div class="card-header">
 
 
-                        <span><b>{{ $requests->users->avatar }}</b> , {{ $requests->created_at->diffForHumans() }}</span>
+                        <span><b>{{ $requests->user->avatar }}</b> , {{ $requests->created_at->diffForHumans() }}</span>
 
                     </div>
 

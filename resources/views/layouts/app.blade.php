@@ -34,7 +34,7 @@
                     <li><a class="nav-link" href="#">Service</a></li>
                     <li><a class="nav-link" href="#">Camps</a></li>
                     <li><a class="nav-link" href="#">Portfolio</a></li>
-                    <li><a class="nav-link" href="#">Request</a></li>
+                    <li><a class="nav-link" href="/request/show">Request</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

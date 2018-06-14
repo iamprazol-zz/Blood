@@ -9,22 +9,22 @@
                 <div class="card-header"><h1>{{ __('Requests For Blood') }}</h1></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('request/create') }}">
+                    <form method="post" action="{{ route('request.store') }}">
                         @csrf
-
                         <div class="form-group row">
                             <label for="b_group" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
 
                             <div class="col-md-6">
-
-                                <select name="b_group_select_box">
-                                    <option name="b_group" value="A+">A Positive(A+)<br></option>
-                                    <option name="b_group" value="B+">B Positive(B+)<br></option>
-                                    <option name="b_group" value="AB+">AB Positive(AB+<br></option>
-                                    <option name="b_group" value="AB-">AB Negetive(AB-)<br></option>
-                                    <option name="b_group" value="O+">O Positive(O+)<br></option>
-                                    <option name="b_group" value="O-">O Negative(O-)</option>
-
+                                <select name="b_group" class="custom-select" id="b_group">
+                                    <option value="" selected="">Choose One</option>
+                                    <option value="1">A+</option>
+                                    <option value="2">A-</option>
+                                    <option value="3">B+</option>
+                                    <option value="4">B-</option>
+                                    <option value="5">AB+</option>
+                                    <option value="6">AB-</option>
+                                    <option value="7">O+</option>
+                                    <option value="8">O-</option>
                                 </select>
 
                                 @if ($errors->has('b_group'))
@@ -34,11 +34,6 @@
                                 @endif
                             </div>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
         <div class="form-group row">
@@ -70,15 +65,15 @@
     </div>
 
 
-    <div class="form-group row mb-0">
-        <div class="col-md-8 offset-md-4">
-            <form action=""method="post" enctype="multipart/form-data">
-                <input type="submit" class="btn btn-primary">
-            </form>
+    <div class="form-group">
+        <button class="btn btn-success pull-right" type="submit">Submit</button>
+    </div>
 
-            <a class="btn btn-link" href="{{ route('request') }}">
-            </a>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+
 
 @endsection
