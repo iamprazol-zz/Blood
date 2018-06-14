@@ -15,7 +15,7 @@
 
 
 </head>
-
+<body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-danger mb-4">
             <img class="image-resize" src="images/agency-landing/blood-drop-icon.png" alt="blood-drop-icon" />
@@ -27,12 +27,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-<<<<<<< HEAD
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-=======
-
-            <div class="navbar-collapse mr-auto collapse show" id="navbarNavDropdown-5">
->>>>>>> 1f7481b53536bfbe3b5925ff33b91017a30986c9
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li><a class="nav-link" href="#">Home</a></li>
@@ -58,7 +53,7 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                    Logout
+                                    {{ __('Logout') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -68,14 +63,9 @@
                         </li>
                     @endguest
                 </ul>
-
-                </ul>
-                
-
             </div>
         
         </nav>
-
 
 
 

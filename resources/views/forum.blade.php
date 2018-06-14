@@ -36,9 +36,6 @@
 
         </div>
 
-
-        <div class="class col-md-10 ml-auto">
-
         <div class="class col-md-4">
 
 
