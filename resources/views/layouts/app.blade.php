@@ -15,7 +15,7 @@
   
   
 </head>
-<body>
+
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-danger mb-4">
             <img class="image-resize" src="images/agency-landing/blood-drop-icon.png" alt="blood-drop-icon" />
@@ -27,6 +27,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+<<<<<<< HEAD
             <div class="navbar-collapse mr-auto collapse show" id="navbarNavDropdown-5">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
@@ -63,9 +64,42 @@
                         </li>
                     @endguest
                 </ul>
+=======
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+                        <li><a class="nav-link" href="#">Home</a></li>
+                        <li><a class="nav-link" href="#">Service</a></li>
+                        <li><a class="nav-link" href="#">Camps</a></li>
+                        <li><a class="nav-link" href="#">Portfolio</a></li>
+                        <li><a class="nav-link" href="request">Request</a></li>
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <div class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                        @else
+                            <li class="nav-item dropdown">
+
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}<span class="caret"></span></a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                            </li>
+                        @endguest
+                    </div>
+                    </ul>
+                </div>
+>>>>>>> send
             </div>
         
         </nav>
+
 
 
 

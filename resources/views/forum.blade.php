@@ -36,7 +36,11 @@
 
         </div>
 
+<<<<<<< HEAD
         <div class="class col-md-10 ml-auto">
+=======
+        <div class="class col-md-4">
+>>>>>>> send
 
             @foreach($requests as $request)
 
@@ -45,7 +49,7 @@
                     <div class="panel-heading">
 
 
-                        <span><b>{{ $requests->user->avatar }}</b> , {{ $requests->created_at->diffForHumans() }}</span>
+                        <span><b>{{ $requests->users->avatar }}</b> , {{ $requests->created_at->diffForHumans() }}</span>
 
                     </div>
 
