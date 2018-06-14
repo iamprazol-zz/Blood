@@ -82,7 +82,7 @@
                             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
 
                             <div class="col-md-6">
-                                <select class="custom-select" id="form1-state">
+                                <select name="gender" class="custom-select" id="gender">
                                   <option value="" selected="">Choose One</option>
                                   <option value="1">Male</option>
                                   <option value="2">Female</option>
@@ -94,7 +94,7 @@
                             <label for="b_group" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
 
                             <div class="col-md-6">
-                                <select class="custom-select" id="form1-state">
+                                <select name="b_group" class="custom-select" id="b_group">
                                   <option value="" selected="">Choose One</option>
                                   <option value="1">A+</option>
                                   <option value="2">A-</option>
