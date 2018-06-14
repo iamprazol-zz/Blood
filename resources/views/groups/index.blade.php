@@ -9,7 +9,7 @@
 
                 <div class="panel panel-default">
 
-                    <div class="panel-heading">Blood Groups</div>
+                    <div class="panel-heading"><h3>Blood Groups</h3></div>
 
                     <div class="panel-body">
 
