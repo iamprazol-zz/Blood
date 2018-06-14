@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
-@section('content2')
+@section('content')
 
+    <div class="container">
 
-        <div class="col-md-3 ">
+        <div class="class col-md-10 ml-auto">
 
             <div class="panel panel-default">
 
@@ -35,7 +36,7 @@
 
         </div>
 
-        <div class="col-md-9">
+        <div class="class col-md-10 ml-auto">
 
             @foreach($requests as $request)
 
