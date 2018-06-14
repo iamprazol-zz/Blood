@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/shards.css">
   <link rel="stylesheet" href="/css/shards-min.css">
-  
-  
+
+
 </head>
 <body>
     <div id="app">
@@ -71,18 +71,23 @@
 
         <div class="container">
 
-            <div class="col-md-4">
+            <div class="col-md-3">
 
-
-
-            </div>
-
-            <div class="col-md-8">
-
-                @yield('content')
+            @yield('content1')
 
             </div>
+
         </div>
+
+        <div class="container">
+
+
+                @yield('content2')
+
+
+
+        </div>
+
     </div>
 </body>
 </html>
