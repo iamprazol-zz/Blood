@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 
 use App\Requests;
 use Session;
+use App\Users;
 
 class RequestController extends Controller
 {
-    public function show($id) {
+    public function show() {
 
-    	$req = Requests::where('user_id' , $id)->first();
-    	return view('request.show')->with('request' , $req);
+    	$req = Requests::all('user_id' )->first();
+
+    	return view('request.create')->with('request', $req);
 
     }
 
