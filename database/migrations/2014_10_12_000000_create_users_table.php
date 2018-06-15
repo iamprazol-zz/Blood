@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->boolean('admin')->default(0);
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('b_group');
+            $table->string('b_group')->nullable();
             $table->bigInteger('mobile');
 
 
