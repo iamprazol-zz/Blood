@@ -18,7 +18,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-danger mb-4">
-            <img class="image-resize" src="images/agency-landing/blood-drop-icon.png" alt="blood-drop-icon" />
+            <img class="image-resize" src="images/blood-drop-icon.png" alt="blood-drop-icon" />
             
             <a class="navbar-brand" href="{{ url('/') }}">
             BBMS
@@ -31,10 +31,11 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li><a class="nav-link" href="#">Home</a></li>
-                    <li><a class="nav-link" href="#">Service</a></li>
                     <li><a class="nav-link" href="#">Camps</a></li>
-                    <li><a class="nav-link" href="#">Portfolio</a></li>
                     <li><a class="nav-link" href="/request/show">Request</a></li>
+                    <li><a class="nav-link" href="/who">Who Can Donate</a></li>
+                    <li><a class="nav-link" href="#">Portfolio</a></li>
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->
