@@ -17,4 +17,9 @@ class ForumsController extends Controller
 								  ->with('groups' , $groups)
 								  ->with('users' , $users);
 	}
+
+
+	public function who(){
+    	return view('who');
+	}
 }
