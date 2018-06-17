@@ -25,6 +25,10 @@
                                     Type
                                 </th>
 
+                                <th>
+                                    Total no of donors
+                                </th>
+
                             </thead>
 
 
@@ -35,6 +39,15 @@
                                     <tr>
                                         <td>{{ $group->id }}</td>
                                         <td>{{ $group->b_group }}</td>
+                                        <td>
+                                            @foreach($user as $u)
+                                                    @if ($group->b_group == $u->b_group )
+
+                                                      {{ $u->b_group }}
+
+                                                    @endif
+                                            @endforeach
+                                        </td>
                                     </tr>
 
                                 @endforeach

@@ -3,15 +3,21 @@
 namespace App\Http\Controllers;
 
 
-use Illuminate\Foundation\Auth\User;
+use Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use App\Groups;
 
-use App\Users;
+use App\User;
+
 
 class GroupsController extends Controller
 {
     public function index(){
-    	return view('groups.index')->with('groups' , Groups::all());
+    	$groups = Groups::all();
+    	$user = User::all();
+
+
+
+    	return view('groups.index')->with('groups' , $groups)->with('user' , $user);
 	}
 }

@@ -2,53 +2,48 @@
 
 @section('content')
 
-    <div class="body">
+    <div class="row">
 
-        <div class="card col-md-8 ">
+        <div class="card col-lg-4 col-md-6  mb-4 sm-hidden">
 
-            
+        
 
-                <div class="card-header">
+            <h4 class="card-header">
+                Blood Groups
+            </h4>
 
-                    Blood Groups
+            <div class="card-body">
 
-                </div>
+                <ul class="list-group">
 
-                <div class="card-body">
+                    @foreach($groups as $group)
 
-                    <ul class="list-group">
+                        <li class="list-group-item">
 
-                        @foreach($groups as $group)
+                            {{ $group->b_group }}
 
-                            <li class="list-group-item">
+                        </li>
 
-                                {{ $group->b_group }}
+                        @endforeach
 
-                            </li>
+                </ul>
 
-                            @endforeach
-
-                    </ul>
-
-                </div>
-
-            
-
+            </div>
         </div>
 
 
-        <div class="card col-md-8 ml-auto">
+        <div class="row mb-4 col-lg-6">
 
 
 
             @foreach($requests as $request)
 
-                <div class="card card-deck">
+                <div class="card">
 
                     <div class="card-header">
 
 
-                        <span><b>{{ $requests->user->avatar }}</b> , {{ $requests->created_at->diffForHumans() }}</span>
+                        <span><img class="card-img-top" src="{{ $requests->user->avatar }}"/>  {{ $requests->created_at->diffForHumans() }}</span>
 
                     </div>
 
