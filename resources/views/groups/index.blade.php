@@ -40,13 +40,7 @@
                                         <td>{{ $group->id }}</td>
                                         <td>{{ $group->b_group }}</td>
                                         <td>
-                                            @foreach($user as $u)
-                                                    @if ($group->b_group == $u->b_group )
-
-                                                      {{ $u->b_group }}
-
-                                                    @endif
-                                            @endforeach
+                                            {{ $group->request->count() }}
                                         </td>
                                     </tr>
 

@@ -12,19 +12,13 @@
                     <form method="post" action="{{ route('request.store') }}">
                         @csrf
                         <div class="form-group row">
-                            <label for="b_group" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
+                            <label for="b_id" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
 
                             <div class="col-md-6">
-                                <select name="b_group" class="custom-select" id="b_group">
-                                    <option value="" selected="">Choose One</option>
-                                    <option value="1">A+</option>
-                                    <option value="2">A-</option>
-                                    <option value="3">B+</option>
-                                    <option value="4">B-</option>
-                                    <option value="5">AB+</option>
-                                    <option value="6">AB-</option>
-                                    <option value="7">O+</option>
-                                    <option value="8">O-</option>
+                                <select name="b_id" class="custom-select" id="b_id">
+                                    @foreach($groups as $group)
+                                        <option value="{{ $group->id }}">{{ $group->b_group }}</option>
+                                    @endforeach
                                 </select>
 
                                 @if ($errors->has('b_group'))
