@@ -20,8 +20,7 @@
 
                         <li class="list-group-item">
 
-                            {{ $group->b_group }}
-
+                            <a href="{{ route('forum.show' , ['id' => $group->id]) }}" style="text-decoration: none;"> {{ $group->b_group }}</a>
                         </li>
 
                         @endforeach
@@ -43,7 +42,7 @@
                     <div class="card-header">
 
 
-                        <span><img class="card-img-top" src="{{ $requests->user->avatar }}"/>  {{ $requests->created_at->diffForHumans() }}</span>
+                        <span><img width="50px" src="{{ $request->user->avatar }}"/> {{ $request->user->name }} , {{ $request->created_at->diffForHumans() }}</span>
 
                     </div>
 
@@ -51,7 +50,7 @@
 
                         <p class="text-center">
 
-                            {{ $requests->contents }}
+                            {{ $request->contents }}
 
                         </p>
 
@@ -61,7 +60,7 @@
 
                         <span>
 
-                            {{ $requests->required_till }}
+                            {{ $request->required_till }}
 
                         </span>
 

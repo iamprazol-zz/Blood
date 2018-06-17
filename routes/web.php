@@ -22,6 +22,11 @@ Route::get('/forum' , [
 	'as' => 'forum.index'
 ]);
 
+Route::get('/forum/show/{id}' , [
+	'uses' => 'ForumsController@show' ,
+	'as' => 'forum.show'
+]);
+
 Route::get('/who' , [
 	'uses' => 'ForumsController@who' ,
 	'as' => 'forum.who'
