@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <li><a class="nav-link" href="#">Home</a></li>
+                    <li><a class="nav-link" href="/forum">Home</a></li>
                     <li><a class="nav-link" href="#">Camps</a></li>
                     <li><a class="nav-link" href="/request/show">Request</a></li>
                     <li><a class="nav-link" href="/who">Who Can Donate</a></li>

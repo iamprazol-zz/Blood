@@ -6,7 +6,7 @@
 
         <div class="card col-lg-4 col-md-6  mb-4 sm-hidden">
 
-        
+
 
             <h4 class="card-header">
                 Blood Groups
@@ -20,11 +20,11 @@
 
                         <li class="list-group-item">
 
-                            {{ $group->b_group }}
+                            <a href=" {{ route('forum.show' , ['id' => $group->id])}}" style="text-decoration: none;" >{{ $group->b_group }}</a>
 
                         </li>
 
-                        @endforeach
+                    @endforeach
 
                 </ul>
 
@@ -43,7 +43,7 @@
                     <div class="card-header">
 
 
-                        <span><img class="card-img-top" src="{{ $requests->user->avatar }}"/>  {{ $requests->created_at->diffForHumans() }}</span>
+                        <span><img width="50px" src="{{ $request->user->avatar }}"/> {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
 
                     </div>
 
@@ -51,7 +51,7 @@
 
                         <p class="text-center">
 
-                            {{ $requests->contents }}
+                            {{ $request->contents }}
 
                         </p>
 
@@ -61,7 +61,7 @@
 
                         <span>
 
-                            {{ $requests->required_till }}
+                            {{ $request->required_till }}
 
                         </span>
 
