@@ -74,8 +74,15 @@
         </div>
         @endforeach
 
+            <div class="card-footer">
+
+                {{ $requests->links() }}
+
+            </div>
+
     </div>
 
     </div>
+
 
 @endsection
