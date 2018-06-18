@@ -17,7 +17,7 @@ class CreateRequestsTable extends Migration
             $table->increments('id');
 
             $table->integer('user_id')->unsigned();
-			$table->integer('b_id')->unsigned();
+			$table->integer('groups_id')->unsigned();
             $table->text('contents');
             $table->date('required_till');
 

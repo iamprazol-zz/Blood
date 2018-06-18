@@ -37,13 +37,13 @@ class RequestController extends Controller
     	$req = Requests::create([
 			'contents' => $r->contents ,
 			'user_id' => Auth::id() ,
-			'b_id' => $r->b_id ,
+			'groups_id' => $r->groups_id ,
 			'required_till' => $r->required_till ,
 		]);
 
     	Session::flash('success' , 'Request posted successfully');
 
-    	return redirect()->route('request.show')->with('request' , $req);
+    	return redirect()->route('forum.show' , ['id' => $req->groups_id]);
 	}
 
 

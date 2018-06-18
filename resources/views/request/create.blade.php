@@ -12,18 +12,18 @@
                     <form method="post" action="{{ route('request.store') }}">
                         @csrf
                         <div class="form-group row">
-                            <label for="b_id" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
+                            <label for="groups_id" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
 
                             <div class="col-md-6">
-                                <select name="b_id" class="custom-select" id="b_id">
+                                <select name="groups_id" class="custom-select" id="groups_id">
                                     @foreach($groups as $group)
                                         <option value="{{ $group->id }}">{{ $group->b_group }}</option>
                                     @endforeach
                                 </select>
 
-                                @if ($errors->has('b_group'))
+                                @if ($errors->has('groups_id'))
                                     <span class="invalid-feedback">
-                    <strong>{{ $errors->first('b_group') }}</strong>
+                    <strong>{{ $errors->first('groups_id') }}</strong>
                 </span>
                                 @endif
                             </div>

@@ -36,11 +36,6 @@ Route::get('/who' , [
 
 Route::group(['middleware' => 'auth'] , function () {
 
-	Route::get('request/show', [
-		'uses' => 'RequestController@show',
-		'as' => 'request.show'
-	]);
-
 	Route::post('request/store' , [
 		'uses' => 'RequestController@store' ,
 		'as' => 'request.store'

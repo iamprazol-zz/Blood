@@ -32,7 +32,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li><a class="nav-link" href="/forum">Home</a></li>
                     <li><a class="nav-link" href="#">Camps</a></li>
-                    <li><a class="nav-link" href="/request/show">Request</a></li>
+                    <li><a class="nav-link" href="/groups">Groups</a></li>
                     <li><a class="nav-link" href="/who">Who Can Donate</a></li>
                     <li><a class="nav-link" href="#">Portfolio</a></li>
 
@@ -71,15 +71,6 @@
 
     </nav>
         <div class="container">
-
-
-        <div class="col-md-4">
-
-
-
-        </div>
-
-        <div class="col-md-8">
 
             @yield('content')
 

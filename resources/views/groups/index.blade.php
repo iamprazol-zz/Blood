@@ -29,6 +29,10 @@
                                     Total no of donors
                                 </th>
 
+                            <th>
+                                Total requests
+                            </th>
+
                             </thead>
 
 
@@ -39,8 +43,9 @@
                                     <tr>
                                         <td>{{ $group->id }}</td>
                                         <td>{{ $group->b_group }}</td>
+                                        <td>{{ $group->user->count() }}</td>
                                         <td>
-                                            {{ $group->request->count() }}
+                                            {{ $group->requests->count() }}
                                         </td>
                                     </tr>
 

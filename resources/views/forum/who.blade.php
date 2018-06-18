@@ -2,9 +2,8 @@
 
 @section('content')
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-sm-10 mr-auto">
+
+            <div class="col-md-8 ">
                 <div class="card">
                     <div class="card-header">{{ __(' Who Can Donate') }}</div>
 
@@ -66,16 +65,16 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
 
 
 
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 mr-auto">
+
+
+
+
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">{{ __('  Who Can/Cannot Donate? ') }}</div>
 
@@ -91,14 +90,11 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
 
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 mr-auto">
+            <div class="col-md-4 ">
                 <div class="card">
                     <div class="card-header">{{ __('  Period & Quantity ') }}</div>
 
@@ -110,13 +106,13 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 mr-auto">
+
+
+
+            <div class="col-md-4 ">
                 <div class="card">
                     <div class="card-header">{{ __('  Who Cannot Donate? ') }}</div>
 
@@ -131,7 +127,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 
 
 

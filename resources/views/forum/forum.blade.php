@@ -3,10 +3,12 @@
 @section('content')
 
     <div class="row">
-
-        <div class="card col-lg-4 col-md-6  mb-4 sm-hidden">
-
-        
+<div class="col-md-4">
+    @if(Auth::check())
+    <a href="{{ route('request.create') }}" class="form-control btn btn-primary">Request for blood</a>
+    <hr>
+    @endif
+        <div class="card sm-hidden">
 
             <h4 class="card-header">
                 Blood Groups
@@ -30,13 +32,12 @@
 
             </div>
         </div>
+</div>
 
 
-        <div class="row mb-4 col-lg-6">
-
-
-
-            @foreach($requests as $request)
+    <div class="col-md-8">
+        @foreach($requests as $request)
+            <div class="card sm-hidden">
 
                 <div class="card">
 
@@ -69,9 +70,11 @@
 
                 </div>
 
-            @endforeach
 
         </div>
+        @endforeach
+
+    </div>
 
     </div>
 

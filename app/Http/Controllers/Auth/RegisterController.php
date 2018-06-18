@@ -29,7 +29,7 @@ class RegisterController extends Controller
 	 *
 	 * @var string
 	 */
-	protected $redirectTo = '/groups';
+	protected $redirectTo = '/forum';
 
 	/**
 	 * Create a new controller instance.
@@ -70,7 +70,7 @@ class RegisterController extends Controller
 				'password' => Hash::make($data['password']),
 				'mobile' => $data['mobile'],
 				'gender' => $data['gender'],
-				'b_group' => $data['b_group'],
+				'groups_id' => $data['groups_id'],
 				'age' => $data['age']
 
 			]);

@@ -18,7 +18,6 @@ class GroupsController extends Controller
     	$user = User::all();
     	$request = Requests::all();
 
-    	dd($group);
 
     	return view('groups.index')->with('groups' , $group)
 										 ->with('users' , $user)
