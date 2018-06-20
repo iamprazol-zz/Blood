@@ -35,4 +35,8 @@ class User extends Authenticatable
 	public function groups(){
     	return $this->belongsTo('App\Groups');
 	}
+
+	public function available(){
+		return $this->hasMany('App\Available');
+	}
 }

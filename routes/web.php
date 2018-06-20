@@ -60,5 +60,15 @@ Route::group(['middleware' => 'auth'] , function () {
 		'uses' => 'GroupsController@index',
 		'as' => 'groups.index'
 	]);
+
+	Route::get('request/available/{id}' , [
+		'uses' => 'RequestController@available' ,
+		'as' => 'request.available'
+	]);
+
+	Route::get('request/unavailable/{id}' , [
+		'uses' => 'RequestController@unavailable' ,
+		'as' => 'request.unavailable'
+	]);
 });
 

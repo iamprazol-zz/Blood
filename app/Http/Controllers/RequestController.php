@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Groups;
 use App\Requests;
+use App\Available;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use App\User;
@@ -73,6 +74,34 @@ class RequestController extends Controller
     	Session::flash('success' , 'Request updated successfully');
 
     	return redirect()->route('forum.show' , ['id' => $request->groups_id]);
+
+	}
+
+
+
+	public function available($id){
+
+    	Available::create([
+    	'requests_id' => $id ,
+		'user_id' => Auth::id()
+		]);
+
+		Session::flash('success' , 'You are going');
+
+		return redirect()->back();
+	}
+
+
+	public  function unavailable($id){
+
+    	$go = Available::where('requests_id' , $id)->where('user_id' , Auth::id())->first();
+
+    	$go->delete();
+
+		Session::flash('success' , 'You are not going');
+
+		return redirect()->back();
+
 
 	}
 

@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="row">
+        <div class="col-md-8 m-auto">
 
-        <div class="row">
+            <div class="card sm-hidden">
 
-            <div class="col-md-8 col-md-offset-2">
+                <h4 class="card-header">
+                    Blood Groups
+                </h4>
 
-                <div class="panel panel-default">
 
-                    <div class="panel-heading">Blood Groups</div>
-
-                    <div class="panel-body">
+                <div class="card-body">
 
                         <table class="table table-hover">
 

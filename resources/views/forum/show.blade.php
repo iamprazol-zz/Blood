@@ -66,7 +66,7 @@
 
                             </p>
 
-                            <b>Required till  :   {{ $request->required_till }}</b>
+                            <button class="btn btn-outline-danger btn-sm">Required till  :   {{ $request->required_till }}</button>
 
                         </div>
 
@@ -74,6 +74,16 @@
 
                             <a href="{{ route('forum.show' , ['id' => $request->groups->id]) }}" class="btn btn-outline-primary btn-pill btn-sm pull-right" style="margin-right: 8px;">{{ $request->groups->b_group }}</a>
 
+                            @if($request->is_user_available())
+
+                                <a href="{{ route('request.unavailable' , ['id' => $request->id]) }}" class="btn btn-danger btn-sm">I can't go<span class="badge">{{ $request->available->count() }}</span></a>
+
+                            @else
+
+                                <a href="{{ route('request.available' , ['id' => $request->id]) }}" class="btn btn-success btn-sm">I am going<span class="badge">{{ $request->available->count() }}</a>
+
+
+                            @endif
 
                         </div>
 
@@ -81,6 +91,8 @@
 
 
         </div>
+
+                <hr>
             @endforeach
 
                 <div class="card-footer">
@@ -91,5 +103,6 @@
 
 
         </div>
+    </div>
 
 @endsection
