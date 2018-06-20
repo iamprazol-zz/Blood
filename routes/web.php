@@ -36,6 +36,16 @@ Route::get('/who' , [
 
 Route::group(['middleware' => 'auth'] , function () {
 
+	Route::get('request/edit/{id}' , [
+		'uses' => 'RequestController@edit' ,
+		'as' => 'request.edit'
+	]);
+
+	Route::post('request/update/{id}' , [
+		'uses' => 'RequestController@update' ,
+		'as' => 'request.update'
+	]);
+
 	Route::post('request/store' , [
 		'uses' => 'RequestController@store' ,
 		'as' => 'request.store'

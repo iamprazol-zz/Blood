@@ -47,6 +47,12 @@
 
                         <span><img width="50px" src="{{ $request->user->avatar }}"/> {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
 
+                        @if(Auth::id() == $request->user->id)
+
+                                <a href="{{ route('request.edit' , ['id' => $request->id]) }}" class="btn btn-info btn-sm pull-right" style="margin-right: 8px;">Edit</a>
+
+
+                        @endif
 
                     </div>
 
@@ -58,15 +64,14 @@
 
                         </p>
 
+                        <b>Required till  :   {{ $request->required_till }}</b>
+
                     </div>
 
                     <div class="card-footer">
 
-                        <span>
+                        <a href="{{ route('forum.show' , ['id' => $request->groups->id]) }}" class="btn btn-outline-primary btn-pill btn-sm pull-right" style="margin-right: 8px;">{{ $request->groups->b_group }}</a>
 
-                            {{ $request->required_till }}
-
-                        </span>
 
                     </div>
 

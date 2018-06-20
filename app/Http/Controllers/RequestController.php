@@ -47,4 +47,33 @@ class RequestController extends Controller
 	}
 
 
+
+	public function  edit($id){
+
+    	$request = Requests::where('id' , $id)->first();
+
+    	return view('request.edit')->with('requests' , $request);
+	}
+
+
+
+	public function update($id){
+
+    	$this->validate(request() , [
+    		'contents' => 'required'
+		]);
+
+    	$request = Requests::find($id);
+
+    	$request->contents = request()->contents;
+    	$request->required_till = request()->required_till;
+
+    	$request->save();
+
+    	Session::flash('success' , 'Request updated successfully');
+
+    	return redirect()->route('forum.show' , ['id' => $request->groups_id]);
+
+	}
+
 }
