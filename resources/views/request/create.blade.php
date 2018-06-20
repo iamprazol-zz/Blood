@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
 
             <div class="col-md-10">
-                <div class="card-header"><h1>{{ __('Requests For Blood') }}</h1></div>
+                <div class="card-header"><h4>{{ __('Requests For Blood') }}</h4></div>
 
                 <div class="card-body">
                     <form method="post" action="{{ route('request.store') }}">
@@ -33,8 +33,8 @@
         <div class="form-group row">
         <label for="contents" class="col-md-4 col-form-label text-md-right">{{ __('Reason') }}</label>
 
-        <div class="col-sm-6">
-            <input id="contents" type="text" class="form-control{{ $errors->has('contents') ? ' is-invalid' : '' }}" name="contents" value="{{ old('contents') }}" required autofocus>
+        <div class="col-sm-7">
+            <textarea id="contents" type="text" cols="20" rows="10" class="form-control{{ $errors->has('contents') ? ' is-invalid' : '' }}" name="contents" value="{{ old('contents') }}" required autofocus></textarea>
 
             @if ($errors->has('contents'))
                 <span class="invalid-feedback">
