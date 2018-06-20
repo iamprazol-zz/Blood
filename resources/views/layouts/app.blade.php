@@ -75,6 +75,8 @@
 
         </div>
 
+        <br>
+
         <footer>
             <nav class="navbar navbar-expand navbar-light bg-danger">
                 <div class="container">
