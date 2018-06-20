@@ -29,6 +29,10 @@
                                     Total no of donors
                                 </th>
 
+                            <th>
+                                Total requests
+                            </th>
+
                             </thead>
 
 
@@ -39,14 +43,9 @@
                                     <tr>
                                         <td>{{ $group->id }}</td>
                                         <td>{{ $group->b_group }}</td>
+                                        <td>{{ $group->user->count() }}</td>
                                         <td>
-                                            @foreach($user as $u)
-                                                    @if ($group->b_group == $u->b_group )
-
-                                                      {{ $u->b_group }}
-
-                                                    @endif
-                                            @endforeach
+                                            {{ $group->requests->count() }}
                                         </td>
                                     </tr>
 

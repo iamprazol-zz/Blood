@@ -32,15 +32,9 @@ Route::get('/who' , [
 	'as' => 'forum.who'
 ]);
 
-Route::get('/home', 'HomeController@index');
 
 
 Route::group(['middleware' => 'auth'] , function () {
-
-	Route::get('request/show', [
-		'uses' => 'RequestController@show',
-		'as' => 'request.show'
-	]);
 
 	Route::post('request/store' , [
 		'uses' => 'RequestController@store' ,

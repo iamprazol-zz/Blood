@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Groups;
 use App\Requests;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -12,7 +13,8 @@ class RequestController extends Controller
 {
     public function show() {
 
-    	$req = Requests::all();
+    	$req = Requests::OrderBy('required_till' , 'asc')->get();
+    	$group = Groups::all();
 
     	return view('request.show')->with('request', $req);
 
@@ -22,7 +24,10 @@ class RequestController extends Controller
 
 	public function create() {
 
-		return view('request.create');
+    	$request = Requests::all();
+    	$group = Groups::all();
+
+		return view('request.create')->with('groups' , $group);
 
 	}
 
@@ -30,15 +35,15 @@ class RequestController extends Controller
     	$r = request();
 
     	$req = Requests::create([
-    		'b_group' => $r->b_group ,
 			'contents' => $r->contents ,
 			'user_id' => Auth::id() ,
+			'groups_id' => $r->groups_id ,
 			'required_till' => $r->required_till ,
 		]);
 
     	Session::flash('success' , 'Request posted successfully');
 
-    	return redirect()->route('request.show')->with('request' , $req);
+    	return redirect()->route('forum.show' , ['id' => $req->groups_id]);
 	}
 
 

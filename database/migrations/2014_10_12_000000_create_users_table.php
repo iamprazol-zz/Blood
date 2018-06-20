@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
 
+			$table->integer('groups_id')->unsigned();
             $table->string('name');
             $table->string('avatar')->default('avatar.png');
             $table->string('gender');
@@ -23,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->boolean('admin')->default(0);
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('b_group')->nullable();
             $table->bigInteger('mobile');
 
 

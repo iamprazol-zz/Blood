@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12 mr-auto">
+        <div class="col-md-10 m-auto">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
@@ -83,18 +82,17 @@
 
                             <div class="col-md-6">
                                 <select name="gender" class="custom-select" id="gender">
-                                  <option value="" selected="">Choose One</option>
-                                  <option value="1">Male</option>
-                                  <option value="2">Female</option>
+                                  <option >Male</option>
+                                  <option >Female</option>
                               </select>
                             </div>
                         </div>
 
                          <div class="form-group row">
-                            <label for="b_group" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
+                            <label for="groups_id" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
 
                             <div class="col-md-6">
-                                <select name="b_group" class="custom-select" id="b_group">
+                                <select name="groups_id" class="custom-select" id="groups_id">
                                   <option value="" selected="">Choose One</option>
                                   <option value="1">A+</option>
                                   <option value="2">A-</option>

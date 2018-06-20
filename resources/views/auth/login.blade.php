@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <div class="col-md-10 ml-auto">
+        <div class="col-md-8 m-auto">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 

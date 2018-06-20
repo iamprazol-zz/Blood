@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
 			'age' => 45 ,
 			'admin' => 1 ,
 			'avatar' => asset('avatars/avatar.png') ,
-			'b_group' => 'A+',
+			'groups_id' => 6 ,
 			'mobile' => 9821256117
 		]);
 
@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder
 			'gender' => 'Male' ,
 			'age' => 22,
 			'avatar' => asset('avatars/avatar.png') ,
-			'b_group' => 'B+',
+			'groups_id' => 4 ,
 			'mobile' => 9845690436
 		]);
 
@@ -43,7 +43,7 @@ class UsersTableSeeder extends Seeder
 			'gender' => 'Male' ,
 			'age' => 22,
 			'avatar' => asset('avatars/avatar.png') ,
-			'b_group' => 'O+',
+			'groups_id' => 8 ,
 			'mobile' => 9847004480
 		]);
     }
