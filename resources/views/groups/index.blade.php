@@ -6,9 +6,11 @@
 
             <div class="card sm-hidden">
 
-                <h4 class="card-header">
-                    Blood Groups
-                </h4>
+                <div class="card-header">
+                    <h4>Blood Groups</h4>
+
+                    <a href="{{ route('groups.search') }}" class="btn btn-outline-danger btn-sm pull-right">Search for a donor</a>
+                </div>
 
 
                 <div class="card-body">

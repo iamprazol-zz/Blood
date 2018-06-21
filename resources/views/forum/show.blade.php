@@ -8,6 +8,8 @@
             @if(Auth::check())
                 <a href="{{ route('request.create') }}" class="form-control btn btn-primary">Request for blood</a>
                 <hr>
+                <a href="{{ route('groups.search') }}" class="form-control btn btn-danger">Search for a donor</a>
+                <hr>
             @endif
             <div class="card sm-hidden">
 

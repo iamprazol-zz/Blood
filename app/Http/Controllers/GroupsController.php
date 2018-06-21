@@ -23,4 +23,27 @@ class GroupsController extends Controller
 										 ->with('users' , $user)
     									 ->with('requests' , $request);
 	}
+
+
+	public function search(){
+
+		$group = Groups::all();
+		$user = User::all();
+		$request = Requests::all();
+
+		return view('groups.search')->with('groups' , $group)
+			->with('users' , $user)
+			->with('requests' , $request);
+	}
+
+	public function donor($id){
+
+		$user = User::where('groups_id' , $id)->get();
+		$request = Requests::all();
+		$group = Groups::all();
+
+		return view('groups.donor')->with('requests' , $request)
+			->with('groups' , $group)
+			->with('users' , $user);
+	}
 }

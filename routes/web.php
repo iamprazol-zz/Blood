@@ -61,6 +61,16 @@ Route::group(['middleware' => 'auth'] , function () {
 		'as' => 'groups.index'
 	]);
 
+	Route::get('groups/search', [
+		'uses' => 'GroupsController@search',
+		'as' => 'groups.search'
+	]);
+
+	Route::get('groups/donor/{id}', [
+		'uses' => 'GroupsController@donor',
+		'as' => 'groups.donor'
+	]);
+
 	Route::get('request/available/{id}' , [
 		'uses' => 'RequestController@available' ,
 		'as' => 'request.available'
