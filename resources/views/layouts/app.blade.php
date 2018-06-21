@@ -18,7 +18,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-danger mb-4">
-            <img class="image-resize" src="images/blood-drop-icon.png" alt="blood-drop-icon" />
+           <a href="{{ url('/') }}"> <img class="image-resize" src="images/blood-drop-icon.png" alt="blood-drop-icon" /></a>
 
             <a class="navbar-brand" href="{{ url('/') }}">
             BBMS
@@ -68,8 +68,6 @@
             </div>
 
         </nav>
-
-    </nav>
         <div class="container">
 
             @yield('content')
