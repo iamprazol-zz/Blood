@@ -5274,9 +5274,10 @@ a.text-black:hover, a.text-black:focus {
 .text-center{
   text-align:center!important
 }
-<<<<<<< HEAD
+
 body{
-  background-image: url(../images/blood-back.jpg) no-repeat center ;
+  background-image: url(../images/blood-back.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-=======
->>>>>>> 6bd6863bc3dacc84af5c2a5e51283ad2f47db4e0
+
