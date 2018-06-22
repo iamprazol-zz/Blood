@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
+
 
 class User extends Authenticatable
 {
@@ -15,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'age' ,'gender' ,'mobile' ,'groups_id'
+        'name', 'email', 'password', 'dob' ,'gender' ,'mobile' ,'groups_id'
     ];
 
     /**
@@ -27,8 +29,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+	protected $dates = ['dob'];
 
-    public function requests(){
+	public function getAge()
+	{
+		return $this->dob->diffInYears(Carbon::now());
+	}
+
+
+	public function requests(){
     	return $this->hasMany('App\Requests');
 	}
 

@@ -23,12 +23,6 @@
                                             <option value="{{ $group->id }}">{{ $group->b_group }}</option>
                                         @endforeach
                                     </select>
-
-                                    @if ($errors->has('groups_id'))
-                                        <span class="invalid-feedback">
-                        <strong>{{ $errors->first('groups_id') }}</strong>
-                    </span>
-                                    @endif
                                 </div>
                             </div>
 
@@ -55,7 +49,7 @@
 
                                 @if ($errors->has('required_till'))
                                     <span class="invalid-feedback">
-                                                            <strong>{{ $errors->first('required_till') }}</strong>
+                                                            <strong>{{ $errors->first('required_till' , 'Entered date is invalid') }}</strong>
                                                         </span>
                                 @endif
                             </div>

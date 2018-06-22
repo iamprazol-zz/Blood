@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -53,6 +54,8 @@ class RegisterController extends Controller
 			'name' => 'required|string|max:255',
 			'email' => 'required|string|email|max:255|unique:users',
 			'password' => 'required|string|min:6|confirmed',
+			'mobile' => 'required|numeric',
+			'dob' => 'required|date|before:- 18 years'
 		]);
 	}
 
@@ -71,7 +74,7 @@ class RegisterController extends Controller
 				'mobile' => $data['mobile'],
 				'gender' => $data['gender'],
 				'groups_id' => $data['groups_id'],
-				'age' => $data['age']
+				'dob' => Carbon::parse($data['dob']) ,
 
 			]);
 

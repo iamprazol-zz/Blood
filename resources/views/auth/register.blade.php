@@ -72,7 +72,13 @@
                             <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
 
                             <div class="col-md-6">
-                                <input id="mobile" type="large number" class="form-control" name="mobile" required>
+                                <input id="mobile" type="tel" class="form-control{{ $errors->has('mobile') ?' is-invalid' : '' }}" name="mobile" required>
+
+                                @if ($errors->has('mobile'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('mobile','It must be at least 10 digits') }}</strong>
+                                    </span>
+                                @endif
                             </div>
 
                         </div>
@@ -108,12 +114,21 @@
 
 
                         <div class="form-group row">
-                            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
+                            <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date Of Birth') }}</label>
 
                             <div class="col-md-6">
-                                <input id="age" type="text" class="form-control" name="age" required>
+                                <input id="dob" type="date" class="form-control{{ $errors->has('dob') ?' is-invalid' : '' }}" name="dob" value="{{ old('dob') }}"  required>
+
+                                @if ($errors->has('dob'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('dob','You must be 18 yrs old') }}</strong>
+                                    </span>
+                                @endif
+
                             </div>
                         </div>
+
+
 
 
                         <div class="form-group row mb-0">
