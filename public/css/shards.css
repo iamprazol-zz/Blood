@@ -2977,8 +2977,11 @@ i.material-icons {
 
 .card-header {
   padding: 1.09375rem 1.875rem;
-  background-color: rgba(90, 97, 105, 0.06);
+  background-color: #f44336;
   border-bottom: none;
+  display: block;
+  border-bottom: 1px #2196F3;
+  color:#fff;
 }
 
 .card-header:first-child {
@@ -2987,7 +2990,7 @@ i.material-icons {
 
 .card-footer {
   padding: 1.09375rem 1.875rem;
-  background-color: rgba(90, 97, 105, 0.06);
+  background-color: #e3e3e3;
   border-top: none;
 }
 
@@ -5271,6 +5274,9 @@ a.text-black:hover, a.text-black:focus {
 .text-center{
   text-align:center!important
 }
+<<<<<<< HEAD
 body{
   background-image: url(../images/blood-back.jpg) no-repeat center ;
 }
+=======
+>>>>>>> 6bd6863bc3dacc84af5c2a5e51283ad2f47db4e0

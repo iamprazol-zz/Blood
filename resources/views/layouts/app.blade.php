@@ -16,9 +16,12 @@
 
 </head>
 <body>
-    <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-danger mb-4">
+<<<<<<< HEAD
            <a href="{{ url('/') }}"> <img class="image-resize" src="images/blood-drop-icon.png" alt="blood-drop-icon" /></a>
+=======
+            <img class="image-resize" src="/images/blood-drop-icon.png" alt="blood-drop-icon" />
+>>>>>>> 6bd6863bc3dacc84af5c2a5e51283ad2f47db4e0
 
             <a class="navbar-brand" href="{{ url('/') }}">
             BBMS
@@ -48,7 +51,7 @@
                         <li class="nav-item dropdown">
 
                             <a id="navbarDropdownMenuLink-5" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false>
-                               {{ Auth::user()->name }} <span class="caret"></span>
+                               {{ Auth::user()->name }} <span class=""></span>
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -73,8 +76,18 @@
             @yield('content')
 
         </div>
-    </div>
-</div>
+
+        <br>
+
+        <footer>
+            <nav class="navbar navbar-expand navbar-light bg-danger">
+                <div class="container">
+
+                    <p>copyright</p>
+
+                </div>
+            </nav>
+        </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

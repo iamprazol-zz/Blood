@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Groups;
 use App\Requests;
+use App\Available;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use App\User;
@@ -46,5 +47,62 @@ class RequestController extends Controller
     	return redirect()->route('forum.show' , ['id' => $req->groups_id]);
 	}
 
+
+
+	public function  edit($id){
+
+    	$request = Requests::where('id' , $id)->first();
+
+    	return view('request.edit')->with('requests' , $request);
+	}
+
+
+
+	public function update($id){
+
+    	$this->validate(request() , [
+    		'contents' => 'required'
+		]);
+
+    	$request = Requests::find($id);
+
+    	$request->contents = request()->contents;
+    	$request->required_till = request()->required_till;
+
+    	$request->save();
+
+    	Session::flash('success' , 'Request updated successfully');
+
+    	return redirect()->route('forum.show' , ['id' => $request->groups_id]);
+
+	}
+
+
+
+	public function available($id){
+
+    	Available::create([
+    	'requests_id' => $id ,
+		'user_id' => Auth::id()
+		]);
+
+		Session::flash('success' , 'You are going');
+
+		return redirect()->back();
+	}
+
+
+	public  function unavailable($id){
+
+    	$go = Available::where('requests_id' , $id)->where('user_id' , Auth::id())->first();
+
+    	$go->delete();
+
+		Session::flash('success' , 'You are not going');
+
+		return redirect()->back();
+
+
+	}
 
 }

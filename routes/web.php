@@ -36,6 +36,16 @@ Route::get('/who' , [
 
 Route::group(['middleware' => 'auth'] , function () {
 
+	Route::get('request/edit/{id}' , [
+		'uses' => 'RequestController@edit' ,
+		'as' => 'request.edit'
+	]);
+
+	Route::post('request/update/{id}' , [
+		'uses' => 'RequestController@update' ,
+		'as' => 'request.update'
+	]);
+
 	Route::post('request/store' , [
 		'uses' => 'RequestController@store' ,
 		'as' => 'request.store'
@@ -49,6 +59,26 @@ Route::group(['middleware' => 'auth'] , function () {
 	Route::get('groups', [
 		'uses' => 'GroupsController@index',
 		'as' => 'groups.index'
+	]);
+
+	Route::get('groups/search', [
+		'uses' => 'GroupsController@search',
+		'as' => 'groups.search'
+	]);
+
+	Route::get('groups/donor/{id}', [
+		'uses' => 'GroupsController@donor',
+		'as' => 'groups.donor'
+	]);
+
+	Route::get('request/available/{id}' , [
+		'uses' => 'RequestController@available' ,
+		'as' => 'request.available'
+	]);
+
+	Route::get('request/unavailable/{id}' , [
+		'uses' => 'RequestController@unavailable' ,
+		'as' => 'request.unavailable'
 	]);
 });
 

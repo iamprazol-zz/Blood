@@ -3,40 +3,43 @@
 @section('content')
 
     <div class="row">
-<div class="col-md-4">
-    @if(Auth::check())
-    <a href="{{ route('request.create') }}" class="form-control btn btn-primary">Request for blood</a>
-    <hr>
-    @endif
-        <div class="card sm-hidden">
+        <div class="col-md-4">
+            @if(Auth::check())
+            <a href="{{ route('request.create') }}" class="form-control btn btn-primary">Request for blood</a>
+            <hr>
+                <a href="{{ route('groups.search') }}" class="form-control btn btn-danger">Search for a donor</a>
+<hr>
+            @endif
+                <div class="card sm-hidden">
 
-            <h4 class="card-header">
-                Blood Groups
-            </h4>
+                    <h4 class="card-header">
+                        Blood Groups
+                    </h4>
 
-            <div class="card-body">
+                    <div class="card-body">
 
-                <ul class="list-group">
+                        <ul class="list-group">
 
-                    @foreach($groups as $group)
+                            @foreach($groups as $group)
 
-                        <li class="list-group-item">
+                                <li class="list-group-item">
 
-                            <a href=" {{ route('forum.show' , ['id' => $group->id]) }}" style="text-decoration: none;" >{{ $group->b_group }}</a>
+                                    <a href="{{ route('forum.show' , ['id' => $group->id]) }}" style="text-decoration: none;"> {{ $group->b_group }}</a>
 
-                        </li>
+                                </li>
 
-                        @endforeach
+                                @endforeach
 
-                </ul>
+                        </ul>
 
-            </div>
+                    </div>
+                </div>
         </div>
-</div>
-
 
     <div class="col-md-8">
+
         @foreach($requests as $request)
+
             <div class="card sm-hidden">
 
                 <div class="card">
@@ -44,8 +47,20 @@
                     <div class="card-header">
 
 
+
                         <span><img width="50px" src="{{ $request->user->avatar }}"/> {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
+<<<<<<< HEAD
                         
+=======
+
+                        @if(Auth::id() == $request->user->id)
+
+                                <a href="{{ route('request.edit' , ['id' => $request->id]) }}" class="btn btn-info btn-sm pull-right" style="margin-right: 8px;">Edit</a>
+
+
+                        @endif
+
+>>>>>>> 6bd6863bc3dacc84af5c2a5e51283ad2f47db4e0
                     </div>
 
                     <div class="card-body">
@@ -56,15 +71,24 @@
 
                         </p>
 
+                        <button class="btn btn-outline-danger btn-sm">Required till  :   {{ $request->required_till }}</button>
+
                     </div>
 
                     <div class="card-footer">
 
-                        <span>
+                        <a href="{{ route('forum.show' , ['id' => $request->groups->id]) }}" class="btn btn-outline-primary btn-pill btn-sm pull-right" style="margin-right: 8px;">{{ $request->groups->b_group }}</a>
 
-                            {{ $request->required_till }}
+                        @if($request->is_user_available())
 
-                        </span>
+                            <a href="{{ route('request.unavailable' , ['id' => $request->id]) }}" class="btn btn-danger btn-sm">I can't go<span class="badge">{{ $request->available->count() }}</span></a>
+
+                        @else
+
+                            <a href="{{ route('request.available' , ['id' => $request->id]) }}" class="btn btn-success btn-sm">I am going<span class="badge">{{ $request->available->count() }}</a>
+
+
+                        @endif
 
                     </div>
 
@@ -72,10 +96,18 @@
 
 
         </div>
+    <hr>
         @endforeach
 
+            <div class="card-footer">
+
+                {{ $requests->links() }}
+
+            </div>
+
     </div>
 
     </div>
+
 
 @endsection
