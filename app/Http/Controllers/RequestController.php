@@ -25,7 +25,6 @@ class RequestController extends Controller
 
 	public function create() {
 
-    	$request = Requests::all();
     	$group = Groups::all();
 
 		return view('request.create')->with('groups' , $group);
@@ -34,6 +33,10 @@ class RequestController extends Controller
 
 	public function store(){
     	$r = request();
+		$this->validate($r ,[
+			'contents' => 'required|string|min:100' ,
+			'required_till' => 'required|date|after:yesterday'
+		]);
 
     	$req = Requests::create([
 			'contents' => $r->contents ,

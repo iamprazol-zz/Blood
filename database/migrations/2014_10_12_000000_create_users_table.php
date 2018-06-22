@@ -18,9 +18,9 @@ class CreateUsersTable extends Migration
 
 			$table->integer('groups_id')->unsigned();
             $table->string('name');
-            $table->string('avatar')->default('avatar.png');
+            $table->string('avatar')->default('avatars/avatar.png');
             $table->string('gender');
-            $table->integer('age') ;
+            $table->date('dob');
             $table->boolean('admin')->default(0);
             $table->string('email')->unique();
             $table->string('password');

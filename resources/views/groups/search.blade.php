@@ -81,7 +81,7 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->groups->b_group }}</td>
                                     <td>{{ $user->gender }}</td>
-                                    <td>{{ $user->age }}</td>
+                                    <td>{{ $user->getAge() }}</td>
                                     <td>{{ $user->mobile }}</td>
 
                                 </tr>
@@ -95,6 +95,7 @@
                 </div>
 
             </div>
+    </div>
 
 
 
