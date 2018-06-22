@@ -17,12 +17,8 @@
 </head>
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-danger mb-4">
-<<<<<<< HEAD
-           <a href="{{ url('/') }}"> <img class="image-resize" src="images/blood-drop-icon.png" alt="blood-drop-icon" /></a>
-=======
-            <img class="image-resize" src="/images/blood-drop-icon.png" alt="blood-drop-icon" />
->>>>>>> 6bd6863bc3dacc84af5c2a5e51283ad2f47db4e0
 
+           <a href="{{ url('/') }}"> <img class="image-resize" src="images/blood-drop-icon.png" alt="blood-drop-icon" /></a>
             <a class="navbar-brand" href="{{ url('/') }}">
             BBMS
             </a>

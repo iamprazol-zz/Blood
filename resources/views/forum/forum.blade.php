@@ -8,7 +8,7 @@
             <a href="{{ route('request.create') }}" class="form-control btn btn-primary">Request for blood</a>
             <hr>
                 <a href="{{ route('groups.search') }}" class="form-control btn btn-danger">Search for a donor</a>
-<hr>
+            <hr>
             @endif
                 <div class="card sm-hidden">
 
@@ -28,7 +28,7 @@
 
                                 </li>
 
-                                @endforeach
+                            @endforeach
 
                         </ul>
 
@@ -49,9 +49,7 @@
 
 
                         <span><img width="50px" src="{{ $request->user->avatar }}"/> {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
-<<<<<<< HEAD
-                        
-=======
+
 
                         @if(Auth::id() == $request->user->id)
 
@@ -60,7 +58,6 @@
 
                         @endif
 
->>>>>>> 6bd6863bc3dacc84af5c2a5e51283ad2f47db4e0
                     </div>
 
                     <div class="card-body">
