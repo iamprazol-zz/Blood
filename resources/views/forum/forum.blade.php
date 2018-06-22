@@ -45,7 +45,7 @@
 
 
                         <span><img width="50px" src="{{ $request->user->avatar }}"/> {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
-
+                        
                     </div>
 
                     <div class="card-body">
