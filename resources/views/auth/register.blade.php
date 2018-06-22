@@ -102,12 +102,12 @@
                                   <option value="" selected="">Choose One</option>
                                   <option value="1">A+</option>
                                   <option value="2">A-</option>
-                                  <option value="3">B+</option>
-                                  <option value="4">B-</option>
-                                  <option value="5">AB+</option>
-                                  <option value="6">AB-</option>
-                                  <option value="7">O+</option>
-                                  <option value="8">O-</option>
+                                  <option value="3">B-</option>
+                                  <option value="4">B+</option>
+                                  <option value="5">AB-</option>
+                                  <option value="6">AB+</option>
+                                  <option value="7">O-</option>
+                                  <option value="8">O+</option>
                                 </select>
                             </div>
                         </div>

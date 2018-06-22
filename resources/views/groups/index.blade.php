@@ -6,9 +6,9 @@
 
             <div class="card sm-hidden">
 
-                <div class="card-header">
-                    <h4>Blood Groups</h4>
-                </div>
+                <h4 class="card-header">
+                    Blood Groups
+                </h4>
 
 
                 <div class="card-body card-deck">
