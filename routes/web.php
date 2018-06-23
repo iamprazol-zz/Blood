@@ -80,5 +80,31 @@ Route::group(['middleware' => 'auth'] , function () {
 		'uses' => 'RequestController@unavailable' ,
 		'as' => 'request.unavailable'
 	]);
+
+
+	Route::get('/profile/index',[
+		'uses' => 'ProfileController@index' ,
+		'as' => 'profile.index'
+	]);
+
+	Route::get('/profile/pic',[
+		'uses' => 'ProfileController@pic',
+		'as' => 'profile.pic'
+	]);
+	Route::post('/profile/upload',[
+		'uses' => 'ProfileController@upload',
+		'as' => 'profile.upload'
+	]);
+
+	Route::post('/profile/update',[
+		'uses' => 'ProfileController@update',
+		'as' => 'profile.update'
+	]);
+
+
+	Route::get('/profile/editProfile', [
+		'uses' => 'ProfileController@editProfile',
+		'as' => 'profile.edit'
+		]);
 });
 
