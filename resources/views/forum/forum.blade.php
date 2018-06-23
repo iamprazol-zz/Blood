@@ -2,6 +2,7 @@
 
 @section('content')
 
+<<<<<<< HEAD
 <div class="row">
     <div class="col-md-4">
         @if(Auth::check())
@@ -11,6 +12,20 @@
         <hr>
         @endif
             <div class="card sm-hidden">
+=======
+    <div class="row">
+        <div class="col-md-4">
+            @if(Auth::check())
+            <a href="{{ route('request.create') }}" class=" btn btn-primary">Request for blood</a>
+                <a href="{{ route('groups.search') }}" class=" btn btn-danger">Search for a donor</a>
+<hr>
+            @endif
+                <div class="card sm-hidden">
+
+                    <h4 class="card-header">
+                        Blood Groups
+                    </h4>
+>>>>>>> hello
 
                 <h4 class="card-header">
                     Blood Groups
@@ -48,7 +63,7 @@
 
 
 
-                        <span><img width="50px" src="{{ $request->user->avatar }}"/> {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
+                        <span><img width="50px" src="/avatars/{{ $request->user->avatar }}"/> {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
 
 
                         @if(Auth::id() == $request->user->id)

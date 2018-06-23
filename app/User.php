@@ -9,25 +9,33 @@ use Carbon\Carbon;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+	use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password', 'dob' ,'gender' ,'mobile' ,'groups_id'
-    ];
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = [
+		'name',
+		'email',
+		'username',
+		'password',
+		'dob',
+		'gender',
+		'mobile',
+		'groups_id'
+	];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+	/**
+	 * The attributes that should be hidden for arrays.
+	 *
+	 * @var array
+	 */
+	protected $hidden = [
+		'password',
+		'remember_token',
+	];
 
 	protected $dates = ['dob'];
 
@@ -37,15 +45,19 @@ class User extends Authenticatable
 	}
 
 
-	public function requests(){
-    	return $this->hasMany('App\Requests');
+	public function requests()
+	{
+		return $this->hasMany('App\Requests');
 	}
 
-	public function groups(){
-    	return $this->belongsTo('App\Groups');
+	public function groups()
+	{
+		return $this->belongsTo('App\Groups');
 	}
 
-	public function available(){
+	public function available()
+	{
 		return $this->hasMany('App\Available');
 	}
+
 }
