@@ -2,17 +2,7 @@
 
 @section('content')
 
-<<<<<<< HEAD
-<div class="row">
-    <div class="col-md-4">
-        @if(Auth::check())
-        <a href="{{ route('request.create') }}" class="form-control btn btn-primary">Request for blood</a>
-        <hr>
-            <a href="{{ route('groups.search') }}" class="form-control btn btn-danger">Search for a donor</a>
-        <hr>
-        @endif
-            <div class="card sm-hidden">
-=======
+
     <div class="row">
         <div class="col-md-4">
             @if(Auth::check())
@@ -25,7 +15,7 @@
                     <h4 class="card-header">
                         Blood Groups
                     </h4>
->>>>>>> hello
+
 
                 <h4 class="card-header">
                     Blood Groups
@@ -105,7 +95,8 @@
                     </div>
 
                 </div>
-            </div>    
+            </div>
+            <hr>
         @endforeach
 
             <div class="card-footer">
