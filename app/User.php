@@ -24,7 +24,7 @@ class User extends Authenticatable
 		'dob',
 		'gender',
 		'mobile',
-		'groups_id'
+		'groups_id', 'latitude' , 'longitude' , 'address'
 	];
 
 	/**
@@ -58,4 +58,6 @@ class User extends Authenticatable
 	public function available(){
 		return $this->hasMany('App\Available');
 	}
+
+
 }

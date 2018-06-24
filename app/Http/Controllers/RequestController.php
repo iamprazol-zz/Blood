@@ -46,12 +46,24 @@ class RequestController extends Controller
 			'required_till' => 'required|date|after:yesterday'
 		]);
 
-    	$req = Requests::create([
-			'contents' => $r->contents ,
-			'user_id' => Auth::id() ,
-			'groups_id' => $r->groups_id ,
-			'required_till' => $r->required_till ,
-		]);
+		$maps_url = 'https://' . 'maps.googleapis.com/' . 'maps/api/geocode/json' . '?address=' . urlencode($r->address);
+		$geo = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($r->address) . '&sensor=false');
+		$geo = json_decode($geo, true); // Convert the JSON to an array
+
+		if (isset($geo['status']) && ($geo['status'] == 'OK')) {
+			$latitude = $geo['results'][0]['geometry']['location']['lat']; // Latitude
+			$longitude = $geo['results'][0]['geometry']['location']['lng']; // Longitude
+
+			$req = Requests::create([
+				'contents' => $r->contents,
+				'user_id' => Auth::id(),
+				'groups_id' => $r->groups_id,
+				'required_till' => $r->required_till,
+				'address' => $r->address,
+				'latitude' => $latitude,
+				'longitude' => $longitude,
+			]);
+		}
 
     	Session::flash('success' , 'Request posted successfully');
 
@@ -70,20 +82,36 @@ class RequestController extends Controller
 
 	public function update($id){
 
-    	$this->validate(request() , [
-    		'contents' => 'required'
+    	$r = request();
+    	$this->validate($r , [
+    		'contents' => 'required',
+			'required_till' => 'required|date|after:yesterday'
+
 		]);
 
-    	$request = Requests::find($id);
+		$maps_url = 'https://' . 'maps.googleapis.com/' . 'maps/api/geocode/json' . '?address=' . urlencode($r->address);
+		$geo = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($r->address) . '&sensor=false');
+		$geo = json_decode($geo, true); // Convert the JSON to an array
 
-    	$request->contents = request()->contents;
-    	$request->required_till = request()->required_till;
+		if (isset($geo['status']) && ($geo['status'] == 'OK')) {
+			$latitude = $geo['results'][0]['geometry']['location']['lat']; // Latitude
+			$longitude = $geo['results'][0]['geometry']['location']['lng']; // Longitude
 
-    	$request->save();
+			$req = Requests::find($id);
 
-    	Session::flash('success' , 'Request updated successfully');
+			$req->contents = $r->contents;
+			$req->required_till = $r->required_till;
+			$req->address = $r->address;
+			$req->latitude = $latitude;
+			$req->longitude = $longitude;
 
-    	return redirect()->route('forum.show' , ['id' => $request->groups_id]);
+
+			$req->save();
+		}
+
+			Session::flash('success', 'Request updated successfully');
+
+			return redirect()->route('forum.show', ['id' => $req->groups_id]);
 
 	}
 

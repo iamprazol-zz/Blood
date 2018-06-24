@@ -72,6 +72,8 @@
                             </p>
 
                             <button class="btn btn-outline-danger btn-sm">Required till  :   {{ $request->required_till }}</button>
+                            <button class="btn btn-outline-danger btn-sm pull-right">Required at :   {{ $request->address }}</button>
+
 
 
                         </div>

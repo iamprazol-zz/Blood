@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Address;
 use App\Requests;
 use App\User;
 use App\Http\Controllers\Controller;
@@ -55,7 +56,7 @@ class RegisterController extends Controller
 			'email' => 'required|string|email|max:255|unique:users',
 			'password' => 'required|string|min:6|confirmed',
 			'mobile' => 'required|numeric',
-			'dob' => 'required|date|before:- 18 years'
+			'dob' => 'required|date|before:	-18 years'
 		]);
 	}
 
@@ -65,8 +66,16 @@ class RegisterController extends Controller
 	 * @param  array $data
 	 * @return \App\User
 	 */
-	protected function create( array $data)
+	protected function create(array $data)
 	{
+		$maps_url = 'https://' . 'maps.googleapis.com/' . 'maps/api/geocode/json' . '?address=' . urlencode($data['address']);
+		$geo = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($data['address']) . '&sensor=false');
+		$geo = json_decode($geo, true); // Convert the JSON to an array
+
+		if (isset($geo['status']) && ($geo['status'] == 'OK')) {
+			$latitude = $geo['results'][0]['geometry']['location']['lat']; // Latitude
+			$longitude = $geo['results'][0]['geometry']['location']['lng']; // Longitude
+
 			return User::create([
 				'name' => $data['name'],
 				'username' => $data['user_name'],
@@ -75,10 +84,13 @@ class RegisterController extends Controller
 				'mobile' => $data['mobile'],
 				'gender' => $data['gender'],
 				'groups_id' => $data['groups_id'],
-				'dob' => Carbon::parse($data['dob']) ,
+				'dob' => Carbon::parse($data['dob']),
+				'latitude' => $latitude,
+				'longitude' => $longitude,
+				'address' => $data['address']
 
 			]);
-
 		}
-
+	}
 }
+

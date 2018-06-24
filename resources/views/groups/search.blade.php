@@ -70,6 +70,10 @@
                                     Contact
                                 </th>
 
+                                <th>
+                                    Address
+                                </th>
+
 
                                 </thead>
 
@@ -83,6 +87,7 @@
                                     <td>{{ $user->gender }}</td>
                                     <td>{{ $user->getAge() }}</td>
                                     <td>{{ $user->mobile }}</td>
+                                    <td>{{ $user->address }}</td>
 
                                 </tr>
                                 @endforeach

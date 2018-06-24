@@ -21,6 +21,9 @@ class CreateRequestsTable extends Migration
 			$table->integer('groups_id')->unsigned();
             $table->text('contents');
             $table->date('required_till');
+			$table->double('latitude');
+			$table->double('longitude');
+			$table->string('address');
 
 			$table->timestamps();
         });

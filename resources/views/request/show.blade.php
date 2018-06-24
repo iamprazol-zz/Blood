@@ -48,7 +48,6 @@
 
 
                             <span><img width="50px" src="/avatars/{{ $request->user->avatar }}"/>&nbsp;&nbsp;&nbsp; {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
-                            <a href="{{ route('request.show' , ['id' => $request->id]) }}" class="btn btn-info btn-pill btn-sm pull-right" style="margin-right: 8px;">View</a>
 
 
                             @if(Auth::id() == $request->user->id)
@@ -98,6 +97,10 @@
                                     Contact
                                 </th>
 
+                                <th>
+                                    Address
+                                </th>
+
 
                                 </thead>
 
@@ -113,6 +116,9 @@
                                         <td>{{ $a->user->gender }}</td>
                                         <td>{{ $a->user->getAge() }}</td>
                                         <td>{{ $a->user->mobile }}</td>
+                                        <td>{{ $a->user->address }}</td>
+
+
 
                                     </tr>
                                 @endforeach
@@ -121,6 +127,8 @@
                             </table>
 
                             <button class="btn btn-outline-danger btn-sm">Required till  :   {{ $request->required_till }}</button>
+                            <button class="btn btn-outline-danger btn-sm pull-right">Required at :   {{ $request->address }}</button>
+
 
                         </div>
 

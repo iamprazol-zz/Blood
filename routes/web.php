@@ -32,7 +32,7 @@ Route::get('/who' , [
 	'as' => 'forum.who'
 ]);
 
-Route::get('/request/show/{id}' ,[
+Route::get('/forum/request/show/{id}' ,[
 	'uses' => 'RequestController@show' ,
 	'as' => 'request.show'
 	]);

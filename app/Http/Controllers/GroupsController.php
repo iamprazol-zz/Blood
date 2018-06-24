@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+
 use Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use App\Groups;
@@ -28,9 +29,10 @@ class GroupsController extends Controller
 
 	public function search(){
 
+		$user = User::OrderBy('id' ,'asc')->get();
 		$group = Groups::all();
-		$user = User::all();
 		$request = Requests::all();
+
 
 		return view('groups.search')->with('groups' , $group)
 			->with('users' , $user)
@@ -43,8 +45,10 @@ class GroupsController extends Controller
 		$request = Requests::all();
 		$group = Groups::all();
 
+
+
 		return view('groups.donor')->with('requests' , $request)
 			->with('groups' , $group)
 			->with('users' , $user);
-	}
+    }
 }
