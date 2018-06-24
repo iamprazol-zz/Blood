@@ -26,6 +26,9 @@ class CreateUsersTable extends Migration
             $table->boolean('admin')->default(0);
             $table->string('password');
             $table->bigInteger('mobile');
+			$table->double('latitude');
+			$table->double('longitude');
+			$table->string('address');
 
 
             $table->rememberToken();

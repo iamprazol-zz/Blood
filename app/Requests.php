@@ -8,7 +8,7 @@ use Auth;
 class Requests extends Model
 {
 
-	protected $fillable = ['user_id' , 'groups_id' , 'contents' , 'required_till'];
+	protected $fillable = ['user_id' , 'groups_id' , 'contents' , 'required_till' , 'latitude' , 'longitude' , 'address'];
 
 	public function user(){
 		return $this->belongsTo('App\User');
@@ -21,6 +21,7 @@ class Requests extends Model
 	public function available(){
 		return $this->hasMany('App\Available');
 	}
+
 
 
 

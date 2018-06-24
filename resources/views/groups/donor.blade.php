@@ -40,7 +40,7 @@
 
                 <div class="card-body">
 
-                    <table class="table table-hover">
+                    <table class="table table-hover" >
 
                         <thead>
 
@@ -69,6 +69,10 @@
                             Contact
                         </th>
 
+                        <th>
+                            Address
+                        </th>
+
 
                         </thead>
 
@@ -83,6 +87,9 @@
                                 <td>{{ $user->gender }}</td>
                                 <td>{{ $user->getAge() }}</td>
                                 <td>{{ $user->mobile }}</td>
+                                <td>{{ $user->address }}</td>
+
+
 
                             </tr>
                         @endforeach

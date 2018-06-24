@@ -60,6 +60,10 @@
                                     <td>Mobile :</td><td>{{ Auth::user()->mobile }}</td>
                                 </tr>
 
+                                <tr>
+                                    <td>Address :</td><td>{{ Auth::user()->address }}</td>
+                                </tr>
+
 
 
 

@@ -23,7 +23,10 @@ class UsersTableSeeder extends Seeder
 			'admin' => 1 ,
 			'avatar' => 'avatar.png' ,
 			'groups_id' => 6 ,
-			'mobile' => 9821256117
+			'mobile' => 9821256117,
+			'latitude' => 28.2613485,
+			'longitude' => 83.9721112 ,
+			'address' => 'lamachaur , pokhara'
 		]);
 
 
@@ -37,7 +40,10 @@ class UsersTableSeeder extends Seeder
 			'dob' => Carbon::parse('1997-01-01'),
 			'avatar' => 'avatar.png',
 			'groups_id' => 4 ,
-			'mobile' => 9845690436
+			'mobile' => 9845690436,
+			'latitude' => 28.2631308,
+			'longitude' => 83.9932144 ,
+			'address' => 'batulichaur , pokhara'
 		]);
 
 		App\User::create([
@@ -49,7 +55,10 @@ class UsersTableSeeder extends Seeder
 			'dob' => Carbon::parse('1996-01-01'),
 			'avatar' => 'avatar.png',
 			'groups_id' => 8 ,
-			'mobile' => 9847004480
+			'mobile' => 9847004480,
+			'latitude' => 28.2245888,
+			'longitude' => 83.9889757  ,
+			'address' => 'chipledhunga , pokhara'
 		]);
     }
 }
