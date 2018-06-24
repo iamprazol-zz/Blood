@@ -47,9 +47,11 @@
 
 
 
-                        <span><img width="50px" src="/avatars/{{ $request->user->avatar }}"/> {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
+                        <span><img width="50px" src="/avatars/{{ $request->user->avatar }}"/>&nbsp;&nbsp;&nbsp; {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
+                        <a href="{{ route('request.show' , ['id' => $request->id]) }}" class="btn btn-info btn-pill btn-sm pull-right" style="margin-right: 8px;">View</a>
 
-                        @if(Auth::id() == $request->user->id)
+
+                    @if(Auth::id() == $request->user->id)
 
                                 <a href="{{ route('request.edit' , ['id' => $request->id]) }}" class="btn btn-info btn-sm pull-right" style="margin-right: 8px;">Edit</a>
 
@@ -60,13 +62,15 @@
 
                     <div class="card-body">
 
-                        <p class="text-center">
+                        <h6 class="card-title text-danger">Reason :</h6>
 
+                        <p class="card-text text-center">
                             {{ $request->contents }}
 
                         </p>
 
                         <button class="btn btn-outline-danger btn-sm">Required till  :   {{ $request->required_till }}</button>
+
 
                     </div>
 

@@ -55,9 +55,7 @@ class User extends Authenticatable
 		return $this->belongsTo('App\Groups');
 	}
 
-	public function available()
-	{
+	public function available(){
 		return $this->hasMany('App\Available');
 	}
-
 }

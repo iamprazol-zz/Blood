@@ -32,6 +32,11 @@ Route::get('/who' , [
 	'as' => 'forum.who'
 ]);
 
+Route::get('/request/show/{id}' ,[
+	'uses' => 'RequestController@show' ,
+	'as' => 'request.show'
+	]);
+
 
 
 Route::group(['middleware' => 'auth'] , function () {

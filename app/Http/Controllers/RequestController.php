@@ -7,18 +7,26 @@ use App\Groups;
 use App\Requests;
 use App\Available;
 use Illuminate\Support\Facades\Auth;
-use Session;
+use Illuminate\Support\Facades\Session;
 use App\User;
 
 class RequestController extends Controller
 {
-    public function show() {
+    public function show($id) {
 
-    	$req = Requests::OrderBy('required_till' , 'asc')->get();
-    	$group = Groups::all();
+		$request = Requests::where('id' , $id)->get();
+		$group = Groups::all();
+		$user = User::all();
+		$available = Available::all();
 
-    	return view('request.show')->with('request', $req);
 
+
+
+
+		return view('request.show')->with('requests' , $request)
+										 ->with('groups' , $group)
+										 ->with('users' , $user)
+										 ->with('availables' , $available);
     }
 
 
@@ -60,7 +68,6 @@ class RequestController extends Controller
 	}
 
 
-
 	public function update($id){
 
     	$this->validate(request() , [
@@ -84,10 +91,12 @@ class RequestController extends Controller
 
 	public function available($id){
 
+
     	Available::create([
     	'requests_id' => $id ,
 		'user_id' => Auth::id()
 		]);
+
 
 		Session::flash('success' , 'You are going');
 
