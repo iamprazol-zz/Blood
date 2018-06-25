@@ -4854,7 +4854,7 @@ a.bg-light:hover, a.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #212529 !important;
+  background-color: #ff0000 !important;
 }
 
 .bg-dark.card .card-title,

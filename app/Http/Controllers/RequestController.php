@@ -9,6 +9,7 @@ use App\Available;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\User;
+use Illuminate\Support\Facades\Notification;
 
 class RequestController extends Controller
 {
@@ -63,6 +64,11 @@ class RequestController extends Controller
 				'latitude' => $latitude,
 				'longitude' => $longitude,
 			]);
+				$donors = self::closest($latitude, $longitude, 5)->all();
+				Notification::send($donors , new \App\Notifications\NewRequestAdded($req));
+
+
+
 		}
 
     	Session::flash('success' , 'Request posted successfully');
@@ -107,6 +113,9 @@ class RequestController extends Controller
 
 
 			$req->save();
+
+			$donors = self::closest($latitude, $longitude, 5)->all();
+			Notification::send($donors , new \App\Notifications\NewRequestAdded($req));
 		}
 
 			Session::flash('success', 'Request updated successfully');
@@ -143,6 +152,43 @@ class RequestController extends Controller
 		return redirect()->back();
 
 
+	}
+
+
+
+
+	public static function closest($lat, $lng, $max_distance = 50, $max_locations = 10, $units = 'miles')
+	{
+		/*
+		 *  Allow for changing of units of measurement
+		 */
+		switch ( $units ) {
+			default:
+			case 'miles':
+				$gr_circle_radius = 3959;
+				break;
+			case 'kilometers':
+				$gr_circle_radius = 6371;
+				break;
+		}
+		$distance_select = sprintf(
+			"*, ( %d * acos( cos( radians(%s) ) " .
+			" * cos( radians( latitude ) ) " .
+			" * cos( radians( longitude ) - radians(%s) ) " .
+			" + sin( radians(%s) ) * sin( radians( latitude ) ) " .
+			") " .
+			") " .
+			"AS distance",
+			$gr_circle_radius,
+			$lat,
+			$lng,
+			$lat
+		);
+		return  User::selectraw($distance_select)
+			->having( 'distance', '<', $max_distance )
+			->take( $max_locations )
+			->orderBy( 'distance', 'ASC' )
+			->get();
 	}
 
 }
