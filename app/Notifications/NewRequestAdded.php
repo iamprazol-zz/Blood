@@ -7,18 +7,19 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class NewAvailableAdded extends Notification
+class NewRequestAdded extends Notification
 {
     use Queueable;
 
+    public $requests;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($req)
     {
-        //
+        $this->requests = $req;
     }
 
     /**
@@ -41,8 +42,9 @@ class NewAvailableAdded extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('A donor has been available for your blood request.')
-                    ->action('View Request', url('/'))
+					->greeting('Hello Donor,')
+                    ->line('A new blood request has been added.')
+                    ->action('View Request', route('request.show' , ['id' => $this->requests->id]))
                     ->line('Thank you for using our application!');
     }
 
