@@ -15,9 +15,9 @@
                     <div class="col-md-5 m-auto">
 
 
-                    <table class="table table-hover">
+                        <table class="table table-hover table-sm">
 
-                            <thead>
+                            <thead class="thead-light">
 
                                 <th>
                                     id
