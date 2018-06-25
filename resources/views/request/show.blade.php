@@ -69,9 +69,9 @@
                             </p>
 
                             <h6 class="card-title text-danger">Available Users :</h6>
-                            <table class="table table-hover">
-                                <thead>
+                            <table class="table table-hover table-sm">
 
+                                <thead class="thead-light">
                                 <th>
                                     Name
                                 </th>
