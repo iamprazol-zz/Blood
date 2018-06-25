@@ -11,20 +11,9 @@
 <hr>
             @endif
                 <div class="card sm-hidden">
-<<<<<<< HEAD
-                <h4 class="card-header">
-                    Blood Groups
-                </h4>
-=======
-
                     <h4 class="card-header">
                         Blood Groups
                     </h4>
-
-
-
->>>>>>> d0de403182d2c8fd26643033127ca32c68b8f804
-
                 <div class="card-body">
 
                     <ul class="list-group">

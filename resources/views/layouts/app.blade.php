@@ -18,7 +18,7 @@
 </head>
 <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark mb-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger mb-4">
 
            <a href="{{ url('/') }}"> <img class="image-resize" src="images/blood-drop-icon.png" alt="blood-drop-icon" /></a>
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -100,7 +100,7 @@
 @yield('footer')
 
         <footer>
-            <nav class="navbar navbar-expand navbar-light bg-dark">
+            <nav class="navbar navbar-expand navbar-light bg-danger">
                 <div class="container">
 
                     <p>copyright</p>
