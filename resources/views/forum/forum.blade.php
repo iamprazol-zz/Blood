@@ -11,9 +11,19 @@
 <hr>
             @endif
                 <div class="card sm-hidden">
+<<<<<<< HEAD
                 <h4 class="card-header">
                     Blood Groups
                 </h4>
+=======
+
+                    <h4 class="card-header">
+                        Blood Groups
+                    </h4>
+
+
+
+>>>>>>> d0de403182d2c8fd26643033127ca32c68b8f804
 
                 <div class="card-body">
 
@@ -83,11 +93,12 @@
 
                         @if($request->is_user_available())
 
-                            <a href="{{ route('request.unavailable' , ['id' => $request->id]) }}" class="btn btn-danger btn-sm">I can't go<span class="badge">{{ $request->available->count() }}</span></a>
+                            <a href="{{ route('request.unavailable' , ['id' => $request->id]) }}" class="btn btn-danger btn-sm">I can't go &nbsp;&nbsp;<span class="badge-pill badge-outline-dark">{{ $request->available->count() }}</span></a>
 
                         @else
 
-                            <a href="{{ route('request.available' , ['id' => $request->id]) }}" class="btn btn-success btn-sm">I am going<span class="badge">{{ $request->available->count() }}</a></span>
+
+                            <a href="{{ route('request.available' , ['id' => $request->id]) }}" class="btn  btn-info btn-sm">I am going &nbsp;&nbsp;<span class="badge-pill badge-outline-dark">{{ $request->available->count() }}</a>
 
 
                         @endif
