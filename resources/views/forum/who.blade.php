@@ -1,9 +1,9 @@
-@extends('layouts.app')
+-@extends('layouts.app')
 
 @section('content')
 
 
-            <div class="col-md-8 ">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">{{ __(' Who Can Donate') }}</div>
 
@@ -74,7 +74,7 @@
 
 
 
-            <div class="col-md-4">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">{{ __('  Who Can/Cannot Donate? ') }}</div>
 
@@ -89,12 +89,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
 
 
 
 
-            <div class="col-md-4 ">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">{{ __('  Period & Quantity ') }}</div>
 
@@ -105,14 +105,13 @@
                     </div>
                 </div>
             </div>
-        </div>
 
 
 
 
 
 
-            <div class="col-md-4 ">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">{{ __('  Who Cannot Donate? ') }}</div>
 
