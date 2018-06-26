@@ -42,6 +42,11 @@ Route::get('/forum/request/show/{id}' ,[
 	'as' => 'request.show'
 	]);
 
+Route::get('/camps' , [
+	'uses' => 'ForumsController@camp' ,
+	'as' => 'camps.create'
+]);
+
 
 
 Route::group(['middleware' => 'auth'] , function () {
