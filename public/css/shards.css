@@ -5044,11 +5044,12 @@ a.text-black:hover, a.text-black:focus {
 
 /as//////////////////////////////
 .container{
+  float: all;
 	width:100%;
 	padding-right:15px;
 	padding-left:15px;
 	margin-right:auto;
-	margin-left:auto
+	margin-left:auto;
 }
 @media (min-width:576px){
 	.container{
@@ -5281,11 +5282,10 @@ body{
   background-attachment: fixed;
 }
 
-footer{
-  overflow: hidden;
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  clear: both;
 }
