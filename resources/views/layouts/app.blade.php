@@ -20,7 +20,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-danger mb-4">
 
-           <a href="{{ url('/') }}"> <img class="image-resize" src="images/blood-drop-icon.png" alt="blood-drop-icon" /></a>
+           <a href="{{ url('/') }}"> <img class="image-resize" src="/images/blood-drop-icon.png" alt="blood-drop-icon" /></a>
             <a class="navbar-brand" href="{{ url('/') }}">
             BBMS
             </a>
@@ -32,7 +32,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li><a class="nav-link" href="/forum">Home</a></li>
-                    <li><a class="nav-link" href="#">Camps</a></li>
+                    <li><a class="nav-link" href="/forum/contact">Contact us</a></li>
                     <li><a class="nav-link" href="/groups">Groups</a></li>
                     <li><a class="nav-link" href="/who">Who Can Donate</a></li>
                     <li><a class="nav-link" href="#">Portfolio</a></li>

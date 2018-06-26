@@ -37,4 +37,10 @@ class ForumsController extends Controller
 			->with('users' , $user);
 	}
 
+
+
+	public function contact(){
+    	return view('forum.contact');
+	}
+
 }
