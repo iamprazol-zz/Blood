@@ -5044,12 +5044,8 @@ a.text-black:hover, a.text-black:focus {
 
 /as//////////////////////////////
 .container{
-  float: all;
 	width:100%;
-	padding-right:15px;
-	padding-left:15px;
-	margin-right:auto;
-	margin-left:auto;
+  height: auto;
 }
 @media (min-width:576px){
 	.container{
@@ -5277,15 +5273,34 @@ a.text-black:hover, a.text-black:focus {
 }
 
 body{
-  background-image: url(../images/blood-back.jpg);
+  background-image: url(/images/blood-back.jpg);
+  width: 100%;
+  margin: auto;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 footer {
-  position: fixed;
   bottom: 0;
   width: 100%;
   height: 50px;
+  margin-bottom:0px;
   clear: both;
+  overflow: hidden;
+}
+.nav-bar a .img{
+  max-width: 400px;
+  max-height: 500px;
+}
+article img:hover{
+  opacity: 0.5;
+}
+.parallex img{
+  width: 100%;
+  margin: auto;
+}
+.aside{
+  float: right;
+  overflow: hidden;
+  margin-top: 25px;
+  margin-left: 15px;
 }

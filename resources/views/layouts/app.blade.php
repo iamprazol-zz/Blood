@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/shards.css">
-  <link rel="stylesheet" href="/css/shards-min.css">
 
 
 </head>
@@ -20,7 +19,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-danger mb-4">
 
-           <a href="{{ url('/') }}"> <img class="image-resize" src="/images/blood-drop-icon.png" alt="blood-drop-icon" /></a>
+           <a href="{{ url('/') }}"> <img class="image-resize" src="/images/blood-drop-icon.png" alt="blood-drop-icon"/></a>
             <a class="navbar-brand" href="{{ url('/') }}">
             BBMS
             </a>
@@ -32,10 +31,10 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li><a class="nav-link" href="/forum">Home</a></li>
-                    <li><a class="nav-link" href="/forum/contact">Contact us</a></li>
                     <li><a class="nav-link" href="/groups">Groups</a></li>
                     <li><a class="nav-link" href="/who">Who Can Donate</a></li>
                     <li><a class="nav-link" href="#">Portfolio</a></li>
+                    <li><a class="nav-link" href="/forum/contact">About us</a></li>
                     <li><a class="nav-link" href="/profile/index">My Profile</a></li>
 
 
