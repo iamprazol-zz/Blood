@@ -42,9 +42,19 @@ Route::get('/forum/request/show/{id}' ,[
 	'as' => 'request.show'
 	]);
 
-Route::get('/camps' , [
-	'uses' => 'ForumsController@camp' ,
+Route::get('/camps/show' , [
+	'uses' => 'CampsController@show' ,
+	'as' => 'camps.show'
+]);
+
+Route::get('/camps/create' , [
+	'uses' => 'CampsController@create' ,
 	'as' => 'camps.create'
+]);
+
+Route::post('/camps/store' , [
+	'uses' => 'CampsController@store' ,
+	'as' => 'camps.store'
 ]);
 
 

@@ -39,10 +39,9 @@ class ProfileController extends Controller
 
     public function upload(Request $request)
 	{
-
-			$file = $request->file('pic');
-			$filename = time() . '.' . $file->getClientOriginalExtension();
-			Image::make($file)->resize(300, 300)->save(public_path('avatars/' . $filename));
+		$file = $request->file('pic');
+		$filename = time() . '.' . $file->getClientOriginalExtension();
+		Image::make($file)->resize(300, 300)->save(public_path('avatars/' . $filename));
 		$user = Auth::user();
 		$user->avatar = $filename;
 		$user->save();
