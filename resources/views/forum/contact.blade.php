@@ -1,80 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
+	<h3 style="margin:auto; text-align: center;">Let us know what you think about us!</h3><br>
+	<p style="text-align: center;margin: auto;">If you have something to say to us you can do it from here. We will try to improve our service as far as practicable.</p>
+<br><br><br>
+<div class="container">
+  <form action="post">
+    <div class="form-group row">
+        <label for="firstname" class="col-md-4 col-form-label text-md-right">First name:</label>
 
-        <div class="row justify-content-center">
-            <div class="col-sm-20 md-auto">
-                <div class="">
-                    <title>Contacts</title>
-                        <div><h2 style="text-align: center;color:red">Our Team</h2><br/>
-                            
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <article>
-                                        <fieldset style="padding: 10px 10px; font-size: 20px">
-                                            <img src="/images/kabita.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left;clear: both;">
-                                            <div class="aside">
-                                                Email: parajulikabita10@gmail.com<br>
-                                                Facebook: <a href="https://www.facebook.com/kabita.parajuli.3990" target="">Kabita Parajuli</a><br>
-                                                Role: Back-end Developer
-                                            </div>    
-                                        </fieldset>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <article>
-                                <fieldset style="padding: 10px 10px; font-size: 20px">
-                                    <img src="/images/prajjwal.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left; clear: left">
-                                    <div class="aside">
-                                        Email: iamprajjwal@gmail.com<br>
-                                        Facebook: <a href="https://www.facebook.com/ujrap" target="">प्रज्वल पौडेल</a><br>
-                                        Role: Back-end Developer
-                                    </div>    
-                                </fieldset>
-                            </article>
-                        </div>
-                    </div>
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <article>
-                                <fieldset style="padding: 10px 10px; font-size: 20px">
-                                    <img src="/images/rasilla.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left; clear: left">
-                                    <div class="aside">
-                                        Email: rasilamichhane@gmail.com<br>
-                                        Facebook: <a href="https://www.facebook.com/rashila.lamichhane.54" target="">Rashila Lamichhane</a><br>
-                                        Role: Front-end Developer
-                                    </div> 
-                                </fieldset>
-                            </article>
-                        </div>
-                    </div>
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <article>
-                                <fieldset style="padding: 10px 10px; font-size: 20px">
-                                    <img src="/images/anjaan.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left; clear: left"/>
-                                    <div class="aside">
-                                        Email: anjangaire@gmail.com<br>
-                                        Facebook: <a href="https://www.facebook.com/anjaan.gaire" target="_blank">Anjaan Gaire</a>
-                                        <br>
-                                        Role: Front-end Developer
-                                    </div>
-                                    
-                                </fieldset>
-                            </article>
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
+        <div class="col-md-6">
+            <input id="firstname" type="text" class="form-control" name="firstname" required>
         </div>
+    </div>
+    <div class="form-group row">
+        <label for="lastname" class="col-md-4 col-form-label text-md-right">Last name:</label>
+
+        <div class="col-md-6">
+            <input id="lastname" type="text" class="form-control" name="lastname" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="Subject" class="col-md-4 col-form-label text-md-right">Subject:       </label>
+
+        <div class="col-md-6">
+           <textarea id="subject" name="subject" placeholder="Write something.." style="height:400px;width:525px;border: none; border-radius: 0.625rem;"></textarea>
+        </div>
+    </div>
+    <div class="form-group row mb-0">
+        <div class="col-md-6 offset-md-4">
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+        </div>
+   	</div>
+
+  </form>
+</div>
 @endsection
-
-

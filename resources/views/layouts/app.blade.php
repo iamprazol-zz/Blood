@@ -34,7 +34,8 @@
                     <li><a class="nav-link" href="/groups">Groups</a></li>
                     <li><a class="nav-link" href="/who">Who Can Donate</a></li>
                     <li><a class="nav-link" href="#">Portfolio</a></li>
-                    <li><a class="nav-link" href="/forum/contact">About us</a></li>
+                    <li><a class="nav-link" href="/forum/about">About us</a></li>
+                    <li><a class="nav-link" href="/forum/contact">Contact us</a></li>
                     <li><a class="nav-link" href="/profile/index">My Profile</a></li>
 
 
