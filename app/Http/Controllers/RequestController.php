@@ -90,7 +90,7 @@ class RequestController extends Controller
 
     	$r = request();
     	$this->validate($r , [
-    		'contents' => 'required',
+    		'contents' => 'required|string|min:100',
 			'required_till' => 'required|date|after:yesterday'
 
 		]);
