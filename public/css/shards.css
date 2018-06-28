@@ -5307,3 +5307,13 @@ article img:hover{
   margin-top: 25px;
   margin-left: 15px;
 }
+.l-aside{
+  float: left;
+  overflow: hidden;
+  clear: left;
+}
+.r-aside{
+  float: right;
+  overflow: hidden;
+  clear:right;
+}
