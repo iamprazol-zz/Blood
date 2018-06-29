@@ -36,6 +36,11 @@
                     <li><a class="nav-link" href="/camps/show">Camps</a></li>
                     <li><a class="nav-link" href="/forum/contact">About us</a></li>
                     <li><a class="nav-link" href="/profile/index">My Profile</a></li>
+                    @if(Auth::check())
+                        @if(Auth::user()->admin)
+                        <li><a class="nav-link" href="/admin">Admin Panel</a></li>
+                        @endif
+                    @endif
 
 
                 </ul>

@@ -43,19 +43,11 @@ Route::get('/forum/request/show/{id}' ,[
 	]);
 
 Route::get('/camps/show' , [
-	'uses' => 'CampsController@show' ,
+	'uses' => 'AdminController@show' ,
 	'as' => 'camps.show'
 ]);
 
-Route::get('/camps/create' , [
-	'uses' => 'CampsController@create' ,
-	'as' => 'camps.create'
-]);
 
-Route::post('/camps/store' , [
-	'uses' => 'CampsController@store' ,
-	'as' => 'camps.store'
-]);
 
 
 
@@ -131,5 +123,53 @@ Route::group(['middleware' => 'auth'] , function () {
 		'uses' => 'ProfileController@editProfile',
 		'as' => 'profile.edit'
 		]);
+
+	Route::get('/admin' , [
+		'uses' => 'AdminController@index' ,
+		'as' => 'admin.index'
+	]);
+
+
+	Route::get('/admin/display' , [
+		'uses' => 'AdminController@display' ,
+		'as' => 'admin.display'
+	]);
+
+
+	Route::get('/admin/make/{id}' , [
+		'uses' => 'AdminController@make_admin' ,
+		'as' => 'admin.make'
+	]);
+
+	Route::get('/admin/remove/{id}' , [
+		'uses' => 'AdminController@remove_admin' ,
+		'as' => 'admin.remove'
+	]);
+
+
+	Route::get('/camps/create' , [
+		'uses' => 'AdminController@create' ,
+		'as' => 'camps.create'
+	]);
+
+	Route::get('camps/edit/{id}' , [
+		'uses' => 'AdminController@edit' ,
+		'as' => 'camps.edit'
+	]);
+
+	Route::post('camps/update/{id}' , [
+		'uses' => 'AdminController@update' ,
+		'as' => 'camps.update'
+	]);
+
+	Route::delete('camps/destroy/{id}' , [
+		'uses' => 'AdminController@destroy' ,
+		'as' => 'camps.destroy'
+	]);
+
+	Route::post('/camps/store' , [
+		'uses' => 'AdminController@store' ,
+		'as' => 'camps.store'
+	]);
 });
 
