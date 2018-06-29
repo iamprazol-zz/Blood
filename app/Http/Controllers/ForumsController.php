@@ -43,8 +43,5 @@ class ForumsController extends Controller
     	return view('forum.contact');
 	}
 
-	public function camp(){
-		return view('camps.create');
-	}
 
 }

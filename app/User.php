@@ -60,4 +60,14 @@ class User extends Authenticatable
 	}
 
 
+	public function is_admin($id){
+		$user = User::where('id' , $id)->first();
+
+		if($user->admin == 1){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }
