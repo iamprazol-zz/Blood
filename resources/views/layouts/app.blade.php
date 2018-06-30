@@ -34,7 +34,7 @@
                     <li><a class="nav-link" href="/groups">Groups</a></li>
                     <li><a class="nav-link" href="/who">Who Can Donate</a></li>
                     <li><a class="nav-link" href="/camps/show">Camps</a></li>
-                    <li><a class="nav-link" href="/forum/contact">About us</a></li>
+                    <li><a class="nav-link" href="/contact/create">Contact us</a></li>
                     <li><a class="nav-link" href="/profile/index">My Profile</a></li>
                     @if(Auth::check())
                         @if(Auth::user()->admin)

@@ -7,18 +7,16 @@
             <div class="col-md-4">
 
                 <div class="card sm-hidden">
-                    <h4 class="card-header">
+                    <h5 class="card-header">
                         Admin Control
-                    </h4>
+                    </h5>
                     <div class="card-body">
 
                         <ul class="list-group">
                             <li class="list-group-item"><a href="{{ route('admin.index') }}">Manage User</a></li>
                             <li class="list-group-item"><a href="{{ route('camps.create') }}">Create a Camp</a></li>
                             <li class="list-group-item"><a href="{{ route('admin.display') }}">Edit a camp</a></li>
-                            <li class="list-group-item"><a href="{{ '#' }}">Manage About us</a></li>
-                            <li class="list-group-item"><a href="{{ '#' }}">Manage Contact us</a></li>
-                            <li class="list-group-item"><a href="{{ '#' }}">Manage Home </a></li>
+                            <li class="list-group-item"><a href="{{ route('admin.contact') }}">Manage Contact us</a></li>
 
                         </ul>
 

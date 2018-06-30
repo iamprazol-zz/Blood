@@ -27,9 +27,15 @@ Route::get('/forum/show/{id}' , [
 	'as' => 'forum.show'
 ]);
 
-Route::get('/forum/contact' , [
-	'uses' => 'ForumsController@contact' ,
-	'as' => 'forum.contact'
+Route::get('/contact/create' , [
+	'uses' => 'ContactController@create' ,
+	'as' => 'contact.create'
+]);
+
+
+Route::post('contact/store' , [
+	'uses' => 'ContactController@store' ,
+	'as' => 'contact.store'
 ]);
 
 Route::get('/who' , [
@@ -145,6 +151,13 @@ Route::group(['middleware' => 'auth'] , function () {
 		'uses' => 'AdminController@remove_admin' ,
 		'as' => 'admin.remove'
 	]);
+
+
+	Route::get('/admin/contact' , [
+		'uses' => 'ContactController@contact' ,
+		'as' => 'admin.contact'
+	]);
+
 
 
 	Route::get('/camps/create' , [
