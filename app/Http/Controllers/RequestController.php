@@ -73,7 +73,7 @@ class RequestController extends Controller
 
     	Session::flash('success' , 'Request posted successfully');
 
-    	return redirect()->route('forum.show' , ['id' => $req->groups_id]);
+    	return redirect()->route('forum.show' , ['id' => $r->groups_id]);
 	}
 
 
