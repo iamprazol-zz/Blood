@@ -1,4 +1,3 @@
-<!doctype html>
 <html class="no-js" lang="en">
 
 <head>
@@ -10,14 +9,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/shards.css">
+
 
 
 </head>
 <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-danger mb-4">
+        <nav class="navbar navbar-expand-lg navbar-light  bg-danger mb-4">
 
            <a href="{{ url('/') }}"> <img class="image-resize" src="/images/blood-drop-icon.png" alt="blood-drop-icon"/></a>
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -35,7 +34,6 @@
                     <li><a class="nav-link" href="/who">Who Can Donate</a></li>
                     <li><a class="nav-link" href="/camps/show">Camps</a></li>
                     <li><a class="nav-link" href="/contact/create">Contact us</a></li>
-                    <li><a class="nav-link" href="/profile/index">My Profile</a></li>
                     @if(Auth::check())
                         @if(Auth::user()->admin)
                         <li><a class="nav-link" href="/admin">Admin Panel</a></li>
@@ -54,11 +52,15 @@
                     @else
                         <li class="nav-item dropdown">
 
-                            <a id="navbarDropdownMenuLink-5" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false>
+                            <a id="navbarDropdownMenuLink-5" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                {{ Auth::user()->name }} <span class=""></span>
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="{{ route('profile.index') }}" >{{ __("My Profile") }}</a>
+
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -68,7 +70,10 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
+
                             </div>
+
+
                         </li>
                     @endguest
                 </ul>
@@ -76,9 +81,17 @@
 
         </nav>
 
+        @if(Session::has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>Success:</strong>{{ Session::get('success') }}
+            </div>
+        @endif
 
 <!-- Slider image for landing page -->
-<div class="">    
+   
     <div class="slider-holder">
         <span id="slider-image-1"></span>
         <span id="slider-image-2"></span>
@@ -94,7 +107,7 @@
             <a href="#slider-image-3" class="slider-change"></a>
         </div>
     </div>
-</div>
+    </div>
     <hr>
     <!-- For our team view -->
     <div class="ourteam col-md-12">
@@ -106,7 +119,7 @@
                 <div class="row">
                     <article>
                         <fieldset style="padding: 10px 10px; font-size: 20px">
-                            <img src="/images/kabita.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left;clear: both;">
+                            <img src="/images/kabita.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left;clear: left;">
                             <div class="aside">
                                 Email: parajulikabita10@gmail.com<br>
                                 Facebook: <a href="https://www.facebook.com/kabita.parajuli.3990" target="">Kabita Parajuli</a><br>
@@ -155,7 +168,7 @@
                 <div class="row">
                     <article>
                         <fieldset style="padding: 10px 10px; font-size: 20px">
-                            <img src="/images/anjaan.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left; clear: left"/>
+                            <img src="/images/anjaan.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left; clear: left;"/>
                             <div class="aside">
                                 Email: anjangaire@gmail.com<br>
                                 Facebook: <a href="https://www.facebook.com/anjaan.gaire" target="_blank">Anjaan Gaire</a>
@@ -171,14 +184,18 @@
     </div>
     </div><br>      
     <!-- For our team view -->
+
+    
        <hr>
+
+
     <!-- Starting of Contact -->
     <br>
     <div class="container-fluid">
         <h3 style="margin:auto; text-align: center;">Let us know what you think about us!</h3><br>
         <p style="text-align: center;margin: auto;">If you have something to say to us you can do it from here. We will try to improve our service as far as practicable.</p>
         <br>
-        <div class="col-md-12">
+        <div class="">
           <form action="post">
             <div class="form-group row">
                 <label for="firstname" class="col-md-4 col-form-label text-md-right">First name:</label>
@@ -214,16 +231,16 @@
             </form>
         </div>
     </div>
-</div>
-<footer>
-            <nav class="navbar navbar-expand navbar-light bg-danger">
-                <div class="container">
 
-                    <p>copyright</p>
+    <footer>
+        <nav class="navbar navbar-expand navbar-light bg-danger">
+            <div class="container">
 
-                </div>
-            </nav>
-        </footer>
+                <p>copyright</p>
+
+            </div>
+        </nav>
+    </footer>
 
 </body>
 

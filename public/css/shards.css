@@ -5287,7 +5287,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: 50px;
-  margin-bottom:0px;
+  margin-bottom:-0px;
   clear: both;
   overflow: hidden;
 }
@@ -5295,42 +5295,37 @@ footer {
   max-width: 400px;
   max-height: 500px;
 }
+/*for our team layout*/
 article img:hover{
   opacity: 0.5;
-}
-.parallex img{
-  width: 100%;
-  margin: auto;
 }
 .aside{
   float: right;
   overflow: hidden;
   margin-top: 25px;
   margin-left: 15px;
-  clear: both;
 }
 .l-aside{
   float: left;
   overflow: hidden;
-  clear: both;
+ 
 }
 .r-aside{
   float: right;
   overflow: hidden;
-  clear:both;
+  
 }
 .ourteam{
   overflow: hidden;
-  clear: both;
 }
 article{
-  clear: both;
+ 
 }
+/*for slider in landing page*/
 .slider-holder
 {
   
   height: 600px;
-  background-color: yellow;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
@@ -5341,7 +5336,7 @@ article{
 .image-holder
 {
   width: 2400px;
-  background-color: red;
+
   height: 600px;
   clear: both;
   position: relative;
@@ -5354,10 +5349,13 @@ article{
 
 .slider-image
 {
+  width: 800px;
+  height: 600px;
   float: left;
-  margin: 0px;
+  margin: auto;
   padding: 0px;
   position: relative;
+  clear: right;
 }
 
 #slider-image-1:target ~ .image-holder
