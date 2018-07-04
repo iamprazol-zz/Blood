@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/shards.css">
   <link rel="stylesheet" href="/css/shards-min.css">
 
@@ -19,7 +18,7 @@
 </head>
 <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-danger mb-4">
+        <nav class="navbar navbar-expand-lg navbar-light  bg-danger mb-4">
 
            <a href="{{ url('/') }}"> <img class="image-resize" src="/images/blood-drop-icon.png" alt="blood-drop-icon"/></a>
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -37,7 +36,6 @@
                     <li><a class="nav-link" href="/who">Who Can Donate</a></li>
                     <li><a class="nav-link" href="/camps/show">Camps</a></li>
                     <li><a class="nav-link" href="/contact/create">Contact us</a></li>
-                    <li><a class="nav-link" href="/profile/index">My Profile</a></li>
                     @if(Auth::check())
                         @if(Auth::user()->admin)
                         <li><a class="nav-link" href="/admin">Admin Panel</a></li>
@@ -56,11 +54,15 @@
                     @else
                         <li class="nav-item dropdown">
 
-                            <a id="navbarDropdownMenuLink-5" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false>
+                            <a id="navbarDropdownMenuLink-5" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                {{ Auth::user()->name }} <span class=""></span>
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="{{ route('profile.index') }}" >{{ __("My Profile") }}</a>
+
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -70,13 +72,26 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
+
                             </div>
+
+
                         </li>
                     @endguest
                 </ul>
             </div>
 
         </nav>
+
+        @if(Session::has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>Success:</strong>{{ Session::get('success') }}
+            </div>
+        @endif
+
         <div class="container">
 
             @yield('content')
@@ -87,21 +102,17 @@
 
 
 
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="/js/shards.min.js"></script>
+    <script src="/js/shards.js"></script>
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <script>
 
-        @if(Session::has('success'))
 
-        toastr.success('{{ Session::get('success') }}');
-
-        @endif
-
-    </script>
 
 @yield('footer')
 
