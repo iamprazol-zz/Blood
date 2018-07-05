@@ -39,9 +39,11 @@ class GroupsController extends Controller
 			->with('requests' , $request);
 	}
 
-	public function donor($id){
+	public function donor(Request $r){
 
-		$user = User::where('groups_id' , $id)->get();
+    	$id = $r->groups_id;
+
+		$user = User::where('groups_id' , $id)->where('address' , $r->address)->get();
 		$request = Requests::all();
 		$group = Groups::all();
 
