@@ -42,7 +42,9 @@
 
                 </form>
 
-                    <button class="btn btn-sm btn-outline-danger"> Total Donors : &nbsp;&nbsp;<span class="badge-pill badge-outline-dark">{{ $users->count() }}</span></button>
+                    <hr>
+
+                    <button class="btn btn-sm btn-outline-danger "> Total Donors : &nbsp;&nbsp;<span class="badge-pill badge-outline-dark">{{ $users->count() }}</span></button>
 
                     <div class="card-body">
 
