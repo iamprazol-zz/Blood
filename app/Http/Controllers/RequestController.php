@@ -64,7 +64,7 @@ class RequestController extends Controller
 				'latitude' => $latitude,
 				'longitude' => $longitude,
 			]);
-				$donors = self::closest($latitude, $longitude, 5)->all();
+				$donors = self::closest($latitude, $longitude, 5)->where('groups_id' , $r->groups_id)->where('id' , '!=' ,Auth::id())->all();
 				Notification::send($donors , new \App\Notifications\NewRequestAdded($req));
 
 

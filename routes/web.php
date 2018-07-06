@@ -89,7 +89,7 @@ Route::group(['middleware' => 'auth'] , function () {
 		'as' => 'groups.search'
 	]);
 
-	Route::get('groups/donor/{id}', [
+	Route::get('groups/donor', [
 		'uses' => 'GroupsController@donor',
 		'as' => 'groups.donor'
 	]);
