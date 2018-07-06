@@ -91,24 +91,55 @@
         @endif
 
 <!-- Slider image for landing page -->
-   
-    <div class="slider-holder">
-        <span id="slider-image-1"></span>
-        <span id="slider-image-2"></span>
-        <span id="slider-image-3"></span>
-        <div class="image-holder">
-            <img src="/images/l.jpg" class="slider-image" />
-            <img src="/images/lk.jpg" class="slider-image" />
-            <img src="/images/n.jpg" class="slider-image" />
+    <div class="landing_page">
+
+        <input type="radio" name="images" id="i1" checked>
+        <input type="radio" name="images" id="i2">
+        <input type="radio" name="images" id="i3">
+
+        <div class="slide_img" id="one">
+
+            <img src="/images/blood1.jpg">
+                <label for="i3" class="pre"></label>
+                <label for="i2" class="nxt"></label>
+
         </div>
-        <div class="button-holder">
-            <a href="#slider-image-1" class="slider-change"></a>
-            <a href="#slider-image-2" class="slider-change"></a>
-            <a href="#slider-image-3" class="slider-change"></a>
+
+        <div class="slide_img" id="two">
+            
+            <img src="/images/blood2.jpg">
+                <label for="i1" class="pre"></label>
+                <label for="i3" class="nxt"></label>
+
         </div>
+
+        <div class="slide_img" id="three">
+            
+            <img src="/images/blood3.jpg">
+                <label for="i2" class="pre"></label>
+                <label for="i1" class="nxt"></label>
+
+        </div>
+
+        <div class="nav1">
+            <label class="dots" id="dot1" for="i1"></label>
+            <label class="dots" id="dot2" for="i2"></label>
+            <label class="dots" id="dot3" for="i3"></label>
+        </div>
+        <script type="text/javascript">
+            onload  = start;
+
+            function start(){   
+            var i = 1;
+            function Move(){    
+                i = (i%3)+1; // 4 is the Number of image in slider
+                document.getElementById('i'+i).checked = true;
+            }
+            setInterval(Move,5000); //change img in 5 sec
+            }
+        </script>
     </div>
-    </div>
-    <hr>
+<br><br><hr>
     <!-- For our team view -->
     <div class="ourteam col-md-12">
         <h2 style="text-align: center;color:red;">Our Team</h2>
@@ -242,6 +273,11 @@
         </nav>
     </footer>
 
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/js/shards.js"></script>
 </body>
 
 </html>
