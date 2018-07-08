@@ -91,54 +91,36 @@
         @endif
 
 <!-- Slider image for landing page -->
-    <div class="landing_page">
-
-        <input type="radio" name="images" id="i1" checked>
-        <input type="radio" name="images" id="i2">
-        <input type="radio" name="images" id="i3">
-
-        <div class="slide_img" id="one">
-
-            <img src="/images/blood1.jpg">
-                <label for="i3" class="pre"></label>
-                <label for="i2" class="nxt"></label>
-
-        </div>
-
-        <div class="slide_img" id="two">
-            
-            <img src="/images/blood2.jpg">
-                <label for="i1" class="pre"></label>
-                <label for="i3" class="nxt"></label>
-
-        </div>
-
-        <div class="slide_img" id="three">
-            
-            <img src="/images/blood3.jpg">
-                <label for="i2" class="pre"></label>
-                <label for="i1" class="nxt"></label>
-
-        </div>
-
-        <div class="nav1">
-            <label class="dots" id="dot1" for="i1"></label>
-            <label class="dots" id="dot2" for="i2"></label>
-            <label class="dots" id="dot3" for="i3"></label>
-        </div>
-        <script type="text/javascript">
-            onload  = start;
-
-            function start(){   
-            var i = 1;
-            function Move(){    
-                i = (i%3)+1; // 4 is the Number of image in slider
-                document.getElementById('i'+i).checked = true;
-            }
-            setInterval(Move,5000); //change img in 5 sec
-            }
-        </script>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="images/blood1.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-white">Blood is Life.</h5>
+        <p>Donate blood to save someone's life.</p>
+      </div>
     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/blood2.jpg" alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-danger">Caption Title</h5>
+        <p class="text-danger">Caption Subtitle</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 <br><br><hr>
     <!-- For our team view -->
     <div class="ourteam col-md-12">

@@ -4105,7 +4105,7 @@ button.list-group-item-dark.active {
   box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
 }
 
-.carousel-item {
+.item {
   transition: -webkit-transform 0.6s ease;
   transition: transform 0.6s ease;
   transition: transform 0.6s ease, -webkit-transform 0.6s ease;
@@ -5329,84 +5329,9 @@ article img:hover{
 article{
  
 }
-/*for slider in landing page*/
-.landing_page{
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 0px;
-  height: 100%;
-  padding-bottom: 45%;
-  background: #4c4c4c;
-  border:solid 8px #2c2c2c; 
-}
 
-.slide_img{
-  position: absolute; 
-  width: 99%;
-  height: 98.5%;
-  overflow: hidden;
-  clear: both;
+.carousel-inner img{
+  height:0;
+  margin: auto;
 }
-
-.slide_img img{
-  width: 100%;
-  height:100%;
-}
-
-#i1, #i2, #i3{
-  display: none;
-}
-
-.pre, .nxt{
-  width: 10%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  background: rgba(88,88,88,.4);
-  z-index: 99;
-  cursor: pointer;
-}
-
-.pre{
-  left: 0;
-}
-
-.nxt{
-  right: 0;
-}
-
-.nav1{
-  width: 100%;
-  height: 11px;
-  bottom: 12%;
-  position: absolute;
-  text-align: center;
-  z-index: 99;
-}
-
-.dots{
-  top: -5px;
-  width: 18px;
-  height: 18px;
-  margin: 0 4px;
-  position: relative;
-  border-radius: 50%;
-  display: inline-block;
-  background: rgba(0,0,0,.6);
-}
-
-.slide_img{
-  z-index: -1;
-}
-
-#i1:checked ~ #one
-#i2:checked ~ #two
-#i3:checked ~ #three{
-  z-index: 9;
-}
-
-#i1:checked ~ .nav1 #dot1,
-#i2:checked ~ .nav1 #dot2,
-#i3:checked ~ .nav1 #dot3{
-  background-color: #fff;
 }
