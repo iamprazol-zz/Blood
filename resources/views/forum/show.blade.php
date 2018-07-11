@@ -6,9 +6,8 @@
 
         <div class="col-md-4">
             @if(Auth::check())
-                <a href="{{ route('request.create') }}" class="form-control btn btn-primary">Request for blood</a>
-                <hr>
-                <a href="{{ route('groups.search') }}" class="form-control btn btn-danger">Search for a donor</a>
+                <a href="{{ route('request.create') }}" class=" btn btn-primary">Request for blood</a>
+                <a href="{{ route('groups.search') }}" class=" btn btn-danger">Search for a donor</a>
                 <hr>
             @endif
             <div class="card sm-hidden">
