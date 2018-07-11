@@ -38,7 +38,7 @@
                             </div>
                         </div>
 
-                         <div class="form-group row">
+                        <div class="form-group row">
                             <label for="user_name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
@@ -68,7 +68,7 @@
                             </div>
                         </div>
 
-                         <div class="form-group row">
+                        <div class="form-group row">
                             <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
 
                             <div class="col-md-6">
@@ -83,31 +83,31 @@
 
                         </div>
 
-                         <div class="form-group row">
+                        <div class="form-group row">
                             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
 
                             <div class="col-md-6">
                                 <select name="gender" class="custom-select" id="gender">
-                                  <option >Male</option>
-                                  <option >Female</option>
-                              </select>
+                                    <option >Male</option>
+                                    <option >Female</option>
+                                </select>
                             </div>
                         </div>
 
-                         <div class="form-group row">
+                        <div class="form-group row">
                             <label for="groups_id" class="col-md-4 col-form-label text-md-right">{{ __('Blood Group') }}</label>
 
                             <div class="col-md-6">
                                 <select name="groups_id" class="custom-select" id="groups_id">
-                                  <option value="" selected="">Choose One</option>
-                                  <option value="1">AB-</option>
-                                  <option value="2">AB+</option>
-                                  <option value="3">B-</option>
-                                  <option value="4">B+</option>
-                                  <option value="5">A-</option>
-                                  <option value="6">A+</option>
-                                  <option value="7">O-</option>
-                                  <option value="8">O+</option>
+                                    <option value="" selected="">Choose One</option>
+                                    <option value="1">A+</option>
+                                    <option value="2">A-</option>
+                                    <option value="3">B-</option>
+                                    <option value="4">B+</option>
+                                    <option value="5">AB-</option>
+                                    <option value="6">AB+</option>
+                                    <option value="7">O-</option>
+                                    <option value="8">O+</option>
                                 </select>
                             </div>
                         </div>
@@ -152,5 +152,5 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 @endsection
