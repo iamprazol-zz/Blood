@@ -43,7 +43,7 @@ class GroupsController extends Controller
 
     	$id = $r->groups_id;
 
-		$user = User::where('groups_id' , $id)->where('address' , $r->address)->get();
+		$user = User::where('groups_id' , $id)->where('address' ,'like' , '%'.$r->get('address').'%')->get();
 		$request = Requests::all();
 		$group = Groups::all();
 
