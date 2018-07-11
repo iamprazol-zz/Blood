@@ -147,7 +147,7 @@ class RequestController extends Controller
 
     	$go->delete();
 
-		Session::flash('success' , 'You are not going');
+		Session::flash('cancel' , 'You are not going');
 
 		return redirect()->back();
 
