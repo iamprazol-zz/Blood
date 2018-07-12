@@ -91,10 +91,11 @@
         @endif
 
 <!-- Slider image for landing page -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 0">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -112,7 +113,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="images/blood3.jpg" alt="Second slide">
+      <img class="d-block w-100" src="images/blood3.jpg" alt="Third slide">
       <div class="carousel-caption d-none d-md-block">
         <h5 class="text-danger">Caption Title</h5>
         <p class="text-danger">Caption Subtitle</p>
@@ -129,10 +130,54 @@
   </a>
 </div>
 <br><br><hr>
+
+
+<!-- Our services -->
+<div id="our-services" class="our-services section py-4">
+        <h3 class="section-title text-center my-5">Our Services</h3>
+        <!-- Features -->
+        <div class="features py-4 mb-4">
+          <div class="container">
+            <div class="row">
+              <div class="feature py-4 col-md-6 d-flex">
+                <div class="icon text-primary mr-3"><i class="fa fa-paint-brush"></i></div>
+                <div class="px-4">
+                    <h5>Search &amp; Request for blood </h5>
+                    <p>Users can search for blood required for any emergency cases and contact the person from the available information.</p>
+                </div>
+              </div>
+              <div class="feature py-4 col-md-6 d-flex">
+                <div class="icon text-primary mr-3"><i class="fa fa-code"></i></div>
+                <div class="px-4">
+                    <h5>  View Camps  </h5>
+                    <p>Users can view blood donation camps happening near their place.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="feature py-4 col-md-6 d-flex">
+                <div class="icon text-primary mr-3"><i class="fa fa-font"></i></div>
+                <div class="px-4">
+                    <h5>View Requests</h5>
+                    <p>Users can view the requests for blood and if they are willing to donate or they know someone with the required blood type then they can contact the person and can donate blood.</p>
+                </div>
+              </div>
+              <div class="feature py-4 col-md-6 d-flex">
+                <div class="icon text-primary mr-3"><i class="fa fa-support"></i></div>
+                <div class="px-4">
+                    <h5>Training &amp; Support</h5>
+                    <p>Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Nullam luctus purus duis sensibus signiferumque.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- / Features -->
+      </div>
     <!-- For our team view -->
     <div class="ourteam col-md-12">
-        <h2 style="text-align: center;color:red;">Our Team</h2>
-        <br>
+        <h3 class="section-title text-center m-5"><span>Our Team </span></h3>
         <div class="l-aside col-md-6">
             
             <div class="container-fluid">
@@ -211,54 +256,44 @@
 
     <!-- Starting of Contact -->
     <br>
-    <div class="container-fluid">
-        <h3 style="margin:auto; text-align: center;">Let us know what you think about us!</h3><br>
-        <p style="text-align: center;margin: auto;">If you have something to say to us you can do it from here. We will try to improve our service as far as practicable.</p>
-        <br>
-        <div class="">
-          <form action="post">
-            <div class="form-group row">
-                <label for="firstname" class="col-md-4 col-form-label text-md-right">First name:</label>
-
-                <div class="col-md-6">
-                    <input id="firstname" type="text" class="form-control" name="firstname" required style="width: 510px;">
+    <div class="contact section-invert py-4">
+        <h3 class="section-title text-center m-5">Contact Us</h3>
+        <div class="container py-4">
+          <div class="row justify-content-md-center px-4">
+            <div class="contact-form col-sm-12 col-md-10 col-lg-7 p-4 mb-4 card">
+              <form>
+                <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="contactFormFullName">Full Name</label>
+                      <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter your full name">
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="contactFormEmail">Email address</label>
+                      <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter your email address">
+                    </div>
+                  </div>
                 </div>
-            </div>
-        
-       
-            <div class="form-group row">
-                <label for="lastname" class="col-md-4 col-form-label text-md-right">Last name:</label>
-
-                <div class="col-md-6">
-                    <input id="lastname" type="text" class="form-control" name="lastname" required style="width: 510px;">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                        <label for="exampleInputMessage1">Message</label>
+                        <textarea id="exampleInputMessage1" class="form-control mb-4" rows="10" placeholder="Enter your message..." name="message"></textarea>
+                    </div>
+                  </div>
                 </div>
+                <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Send Your Message">
+              </form>
             </div>
-            <div class="form-group row">
-                <label for="Subject" class="col-md-4 col-form-label text-md-right">Subject:       </label>
-
-                <div class="col-md-6">
-                   <textarea id="subject" name="subject" placeholder="Write something.." style="height:400px;width:510px;border: none; border-radius: 0.625rem;"></textarea>
-                </div>
-            </div>
-            <div class="form-group row mb-0">
-                <div class="col-md-6 offset-md-4">
-                    <button type="submit" class="btn btn-primary">
-                        Submit
-                    </button>
-                </div>
-            </div>
-
-            </form>
+          </div>
         </div>
-    </div>
+      </div>
 
     <footer>
         <nav class="navbar navbar-expand navbar-light bg-danger">
-            <div class="container">
-
-                <p>copyright</p>
-
-            </div>
+            
         </nav>
     </footer>
 
