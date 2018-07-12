@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="col-md-12">
+    <div class="col-md-25">
         <div class="row">
             <div class="col-md-4">
 
@@ -14,10 +14,10 @@
 
                         <ul class="list-group">
                             <li class="list-group-item"><a href="{{ route('admin.index') }}">Manage User</a></li>
+                            <li class="list-group-item"><a href="{{ route('admin.verifyindex') }}">Verify User</a></li>
                             <li class="list-group-item"><a href="{{ route('camps.create') }}">Create a Camp</a></li>
                             <li class="list-group-item"><a href="{{ route('admin.display') }}">Edit a camp</a></li>
                             <li class="list-group-item"><a href="{{ route('admin.contact') }}">Manage Contact us</a></li>
-
                         </ul>
 
                     </div>
@@ -32,7 +32,7 @@
                             <div class="card-body">
 
 
-                                <table class="table  table-hover table-sm">
+                                <table class="table  table-hover table-sm" style="width: 25%; height: 25%;">
 
                                     <thead>
 
@@ -61,6 +61,9 @@
                                         Contact
                                     </th>
 
+                                    <th>
+                                        Status
+                                    </th>
 
                                     <th>
                                         Option
@@ -80,6 +83,7 @@
                                             <td>{{ $user->gender }}</td>
                                             <td>{{ $user->getAge() }}</td>
                                             <td>{{ $user->mobile }}</td>
+                                            <td>{{ $user->verify }}</td>
                                             <td>
                                                 @if($user->is_admin($user->id))
                                                     <a href="{{ route('admin.remove' , ['id' => $user->id])  }}" class="btn btn-danger btn-sm pull-left">Remove Admin</a>

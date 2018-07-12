@@ -135,6 +135,23 @@ Route::group(['middleware' => 'auth'] , function () {
 		'as' => 'admin.index'
 	]);
 
+	Route::get('/admin/user/view/{id}' , [
+		'uses' => 'AdminController@user_view' ,
+		'as' => 'admin.userview'
+	]);
+
+
+	Route::get('/admin/verify/index' , [
+		'uses' => 'AdminController@verify_index' ,
+		'as' => 'admin.verifyindex'
+	]);
+
+
+	Route::get('/admin/verified/{id}' , [
+		'uses' => 'AdminController@verified' ,
+		'as' => 'admin.verified'
+	]);
+
 
 	Route::get('/admin/display' , [
 		'uses' => 'AdminController@display' ,
