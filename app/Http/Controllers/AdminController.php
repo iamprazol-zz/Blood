@@ -152,4 +152,41 @@ class AdminController extends Controller
 	}
 
 
+	public function verify_index(){
+		$user = Auth::user();
+		if($user->admin) {
+			$u = User::where('verify' , 'not verified')->get();
+			$g = Groups::all();
+			return view('admin.verifyindex')->with('users' , $u)->with('groups' , $g);
+		}
+		return response('Unauthorized' , 401);
+	}
+
+	public function user_view($id){
+    	$u = User::where('id' , $id)->first();
+    	$g = Groups::all();
+
+		return view('admin.verify')->with('user' , $u)->with('groups' , $g);
+
+
+	}
+
+
+
+
+	public function verified($id){
+
+		$ad = User::where('id' , $id)->first();
+
+		$ad->verify = 'verified' ;
+
+		$ad->save();
+
+		Session::flash('success' , 'User has been verified');
+
+		return redirect()->back();
+	}
+
+
+
 }

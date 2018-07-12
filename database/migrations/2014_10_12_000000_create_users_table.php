@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
 			$table->double('latitude');
 			$table->double('longitude');
 			$table->string('address');
+			$table->string('verify')->default('not verified');
 
 
             $table->rememberToken();
