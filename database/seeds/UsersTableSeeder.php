@@ -27,7 +27,9 @@ class UsersTableSeeder extends Seeder
 			'latitude' => 28.2613485,
 			'longitude' => 83.9721112 ,
 			'address' => 'lamachaur , pokhara',
-			'verify' => 'verified'
+			'verify' => 'verified' ,
+			'citizenship' => 'citizen2.jpg'
+
 		]);
 
 
@@ -45,7 +47,9 @@ class UsersTableSeeder extends Seeder
 			'latitude' => 28.2631308,
 			'longitude' => 83.9932144 ,
 			'address' => 'batulichaur , pokhara',
-			'verify' => 'not verified'
+			'verify' => 'not verified' ,
+			'citizenship' => 'citizen1.jpg'
+
 
 		]);
 
@@ -62,7 +66,9 @@ class UsersTableSeeder extends Seeder
 			'latitude' => 28.2245888,
 			'longitude' => 83.9889757  ,
 			'address' => 'chipledhunga , pokhara',
-			'verify' => 'not verified'
+			'verify' => 'not verified' ,
+			'citizenship' => 'citizen3.jpg'
+
 		]);
     }
 }

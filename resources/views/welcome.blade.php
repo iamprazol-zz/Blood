@@ -15,6 +15,10 @@
 
 </head>
 <body>
+<div class="loader">
+    <div class="page-loader"></div>
+</div>
+
 
 <nav class="navbar navbar-expand-lg navbar-light  bg-danger mb-4">
 
@@ -96,38 +100,27 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="images/img3.jpg" alt="First slide">
+            <img class="d-block w-100" src="images/front2.jpg" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-RED">Blood is Life.</h5>
-                <p><b>Donate blood to save someone's life.</p>
+                <h5 class="text-white">Blood is Life.</h5>
+                <p>Donate blood to save someone's life.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="images/img2.png" alt="Second slide">
+            <img class="d-block w-100" src="images/front5.jpg" alt="Second slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-danger">Cost of Life</h5>
-                <p class="text-danger">Blood donation will cost you nothing but it will
-                    save a life</p>
-            </div>
-        </div>
-
-        <div class="carousel-item">
-            <img class="d-block w-100" src="images/blood2.jpg" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-danger">Cost of Life</h5>
-                <p class="text-danger">Blood donation will cost you nothing but it will
-                    save a life</p>
+                <h5 class="text-danger">Caption Title</h5>
+                <p class="text-danger">Caption Subtitle</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="images/blood3.jpg" alt="Fourth slide">
+            <img class="d-block w-100" src="images/front3.jpg" alt="Third slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-white">Drop of Blood</h5>
-                <p class="text-blue">A life may depend on a gesture from you, a bottle of blood</p>
+                <h5 class="text-danger">Caption Title</h5>
+                <p class="text-danger">Caption Subtitle</p>
             </div>
         </div>
     </div>
@@ -140,7 +133,7 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<br><br><hr>
+<hr>
 
 
 <!-- Our services -->
@@ -174,12 +167,13 @@
                         <p>Users can view the requests for blood and if they are willing to donate or they know someone with the required blood type then they can contact the person and can donate blood.</p>
                     </div>
                 </div>
-                <div class="feature py-4 col-md-6 d-flex">
-                    <div class="icon text-primary mr-3"><i class="fa fa-support"></i></div>
-                    <div class="px-4">
-                        <h5>Training &amp; Support</h5>
-                        <p>Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Nullam luctus purus duis sensibus signiferumque.</p>
-                    </div>
+            </div>
+            <div class="feature py-4 col-md-6 d-flex">
+                <div class="icon text-primary mr-3"><i class="fa fa-support"></i></div>
+                <div class="px-4">
+                    <h5>Location wise search</h5>
+                    <p>Users can search for blood within their location and can contact people who are near their location making it easy and efficient to donate and receive blood.</p>
+
                 </div>
             </div>
         </div>
@@ -257,20 +251,22 @@
             </div>
         </div>
     </div>
+
 </div>
-</div><br>
 <!-- For our team view -->
+
 
 
 <hr>
 
 
 <!-- Starting of Contact -->
-<br>
+
 <div class="contact section-invert py-4">
     <h3 class="section-title text-center m-5">Contact Us</h3>
     <div class="container py-4">
         <div class="row justify-content-md-center px-4">
+
             <div class="contact-form col-sm-12 col-md-10 col-lg-7 p-4 mb-4 card">
                 <form>
                     <div class="row">
@@ -302,9 +298,22 @@
     </div>
 </div>
 
+
 <footer>
     <nav class="navbar navbar-expand navbar-light bg-danger">
-
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav mr-auto">
+                <li><a class="nav-link" href="/forum">Home</a></li>
+                <li><a class="nav-link" href="/groups">Groups</a></li>
+                <li><a class="nav-link" href="/who">Who Can Donate</a></li>
+                <li><a class="nav-link" href="/camps/show">Camps</a></li>
+                <li><a class="nav-link" href="/contact/create">Contact us</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="https://facebook.com/"><i class="fa fa-facebook"></i></a></li>
+            </ul>
+        </div>
     </nav>
 </footer>
 
