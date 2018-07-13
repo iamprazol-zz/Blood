@@ -96,27 +96,38 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="images/blood1.jpg" alt="First slide">
+            <img class="d-block w-100" src="images/img3.jpg" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-white">Blood is Life.</h5>
-                <p>Donate blood to save someone's life.</p>
+                <h5 class="text-RED">Blood is Life.</h5>
+                <p><b>Donate blood to save someone's life.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="images/blood2.jpg" alt="Second slide">
+            <img class="d-block w-100" src="images/img2.png" alt="Second slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-danger">Caption Title</h5>
-                <p class="text-danger">Caption Subtitle</p>
+                <h5 class="text-danger">Cost of Life</h5>
+                <p class="text-danger">Blood donation will cost you nothing but it will
+                    save a life</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img class="d-block w-100" src="images/blood2.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-danger">Cost of Life</h5>
+                <p class="text-danger">Blood donation will cost you nothing but it will
+                    save a life</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="images/blood3.jpg" alt="Third slide">
+            <img class="d-block w-100" src="images/blood3.jpg" alt="Fourth slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-danger">Caption Title</h5>
-                <p class="text-danger">Caption Subtitle</p>
+                <h5 class="text-white">Drop of Blood</h5>
+                <p class="text-blue">A life may depend on a gesture from you, a bottle of blood</p>
             </div>
         </div>
     </div>
