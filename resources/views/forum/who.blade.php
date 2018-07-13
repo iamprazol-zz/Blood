@@ -5,7 +5,42 @@
     <div class="row">
         <div class="col-md-12 m-auto">
 
-            <div class="card">
+
+            <div class="row">
+                <div class="col-md-12 m-auto">
+
+                    <div class="card">
+                        <h5 class="card-header">Must Know</h5>
+                        <div class="card-body">
+
+                            <div class="card-deck">
+
+                                <div class="col-md-6 ">
+                                    <div class="card">
+                                        <div class="card-header">{{ __('  What blood type is most needed? ') }}</div>
+                                        <div class="card-body">
+                                            <li>
+                                                All blood types are needed. Common blood types are needed because there are many patients with them. Less common blood types are needed because there are fewer donors to give them. However, people with O- blood are particularly in demand because they are the "universal donor." It means that people of all blood types can receive O- blood safely, so it is used during life-threatening emergencies or when the matching blood type is in short supply. AB types are universal recipients. This relationship is reversed for plasma products. AB type plasma can be transfused to all patients, while O- types are the universal plasma recipients. Therefore, all types are really needed!
+
+                                            </li>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <img src="/images/match.jpg" style="width: 500px; height: 300px; float: left;clear: both;">
+                                <div class="card-body">
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
                 <h5 class="card-header">Informations</h5>
                 <div class="card-body">
 
@@ -144,28 +179,6 @@
         </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
