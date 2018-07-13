@@ -15,6 +15,9 @@
 
 </head>
 <body>
+    <div class="loader">
+    <div class="page-loader"></div>
+  </div>
 
         <nav class="navbar navbar-expand-lg navbar-light  bg-danger mb-4">
 
@@ -129,7 +132,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<br><br><hr>
+<hr>
 
 
 <!-- Our services -->
@@ -166,8 +169,8 @@
               <div class="feature py-4 col-md-6 d-flex">
                 <div class="icon text-primary mr-3"><i class="fa fa-support"></i></div>
                 <div class="px-4">
-                    <h5>Training &amp; Support</h5>
-                    <p>Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Nullam luctus purus duis sensibus signiferumque.</p>
+                    <h5>Location wise search</h5>
+                    <p>Users can search for blood within their location and can contact people who are near their location making it easy and efficient to donate and receive blood.</p>
                 </div>
               </div>
             </div>
@@ -247,7 +250,7 @@
             </div>
         </div> 
     </div>
-    </div><br>      
+    </div>      
     <!-- For our team view -->
 
     
@@ -255,7 +258,7 @@
 
 
     <!-- Starting of Contact -->
-    <br>
+  
     <div class="contact section-invert py-4">
         <h3 class="section-title text-center m-5">Contact Us</h3>
         <div class="container py-4">
@@ -293,7 +296,17 @@
 
     <footer>
         <nav class="navbar navbar-expand navbar-light bg-danger">
-            
+             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav mr-auto">
+                    <li><a class="nav-link" href="/forum">Home</a></li>
+                    <li><a class="nav-link" href="/groups">Groups</a></li>
+                    <li><a class="nav-link" href="/who">Who Can Donate</a></li>
+                    <li><a class="nav-link" href="/camps/show">Camps</a></li>
+                    <li><a class="nav-link" href="/contact/create">Contact us</a></li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://facebook.com/"><i class="fa fa-facebook"></i></a></li>
         </nav>
     </footer>
 
