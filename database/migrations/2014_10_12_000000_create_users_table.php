@@ -30,9 +30,11 @@ class CreateUsersTable extends Migration
 			$table->double('longitude');
 			$table->string('address');
 			$table->string('verify')->default('not verified');
+			$table->string('citizenship');
 
 
-            $table->rememberToken();
+
+			$table->rememberToken();
             $table->timestamps();
         });
     }

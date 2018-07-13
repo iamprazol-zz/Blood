@@ -72,7 +72,7 @@
                             </tr>
 
                             <tr>
-                                <td>Citizenship :</td><td><img src="/avatars/{{ $user->avatar }}" style="float: left; height: 300px; width: 100%;"></td>
+                                <td>Citizenship :</td><td><img src="/images/{{ $user->citizenship }}" style="float: left; height: 300px; width: 100%;"></td>
                             </tr>
 
 

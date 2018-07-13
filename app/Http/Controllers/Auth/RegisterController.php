@@ -6,10 +6,13 @@ use App\Address;
 use App\Requests;
 use App\User;
 use App\Http\Controllers\Controller;
+use http\Env\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Input;
+use Image;
 
 class RegisterController extends Controller
 {
@@ -66,7 +69,7 @@ class RegisterController extends Controller
 	 * @param  array $data
 	 * @return \App\User
 	 */
-	protected function create(array $data)
+	protected function create(array $data )
 	{
 		$maps_url = 'https://' . 'maps.googleapis.com/' . 'maps/api/geocode/json' . '?address=' . urlencode($data['address']);
 		$geo = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($data['address']) . '&sensor=false');
@@ -75,6 +78,11 @@ class RegisterController extends Controller
 		if (isset($geo['status']) && ($geo['status'] == 'OK')) {
 			$latitude = $geo['results'][0]['geometry']['location']['lat']; // Latitude
 			$longitude = $geo['results'][0]['geometry']['location']['lng']; // Longitude
+
+			$req = request();
+			$file = $req->file('pic');
+			$filename = time() . '.' . $file->getClientOriginalExtension();
+			Image::make($file)->resize(300, 850)->save(public_path('images/' . $filename));
 
 			return User::create([
 				'name' => $data['name'],
@@ -87,7 +95,8 @@ class RegisterController extends Controller
 				'dob' => Carbon::parse($data['dob']),
 				'latitude' => $latitude,
 				'longitude' => $longitude,
-				'address' => $data['address']
+				'address' => $data['address'] ,
+				'citizenship' => $filename
 
 			]);
 		}
