@@ -94,7 +94,7 @@
         @endif
 
 <!-- Slider image for landing page -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 0">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top:-24px">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -143,7 +143,7 @@
           <div class="container">
             <div class="row">
               <div class="feature py-4 col-md-6 d-flex">
-                <div class="icon text-primary mr-3"><i class="fa fa-paint-brush"></i></div>
+                <div class="icon text-primary mr-3"><i class="fa fa-search"></i></div>
                 <div class="px-4">
                     <h5>Search &amp; Request for blood </h5>
                     <p>Users can search for blood required for any emergency cases and contact the person from the available information.</p>
@@ -190,7 +190,7 @@
                             <img src="/images/kabita.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left;clear: left;">
                             <div class="aside">
                                 Email: parajulikabita10@gmail.com<br>
-                                Facebook: <a href="https://www.facebook.com/kabita.parajuli.3990" target="">Kabita Parajuli</a><br>
+                                 <i class="fa fa-facebook"></i> : <a href="https://www.facebook.com/kabita.parajuli.3990" target="">Kabita Parajuli</a><br>
                                 Role: Back-end Developer
                             </div>    
                         </fieldset>
@@ -205,7 +205,7 @@
                             <img src="/images/prajjwal.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left; clear: left">
                             <div class="aside">
                                 Email: iamprajjwal@gmail.com<br>
-                                Facebook: <a href="https://www.facebook.com/ujrap" target="">प्रज्वल पौडेल</a><br>
+                               <i class="fa fa-facebook"></i> : <a href="https://www.facebook.com/ujrap" target="">प्रज्वल पौडेल</a><br>
                                 Role: Back-end Developer
                             </div>    
                         </fieldset>
@@ -223,7 +223,7 @@
                             <img src="/images/rasilla.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left; clear: left">
                             <div class="aside">
                                 Email: rasilamichhane@gmail.com<br>
-                                Facebook: <a href="https://www.facebook.com/rashila.lamichhane.54" target="">Rashila Lamichhane</a><br>
+                                <i class="fa fa-facebook"></i> : <a href="https://www.facebook.com/rashila.lamichhane.54" target="">Rashila Lamichhane</a><br>
                                 Role: Front-end Developer
                             </div> 
                         </fieldset>
@@ -239,7 +239,7 @@
                             <img src="/images/anjaan.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left; clear: left;"/>
                             <div class="aside">
                                 Email: anjangaire@gmail.com<br>
-                                Facebook: <a href="https://www.facebook.com/anjaan.gaire" target="_blank">Anjaan Gaire</a>
+                                <i class="fa fa-facebook"></i> : <a href="https://www.facebook.com/anjaan.gaire" target="_blank">Anjaan Gaire</a>
                                 <br>
                                 Role: Front-end Developer
                             </div>

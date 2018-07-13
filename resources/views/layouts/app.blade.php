@@ -137,6 +137,13 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="https://facebook.com/easybloodbank"><i class="fa fa-facebook"></i></a></li>
+                    <li class="nav-item">
+                  <a class="nav-link" href="https://twitter.com/anjaangaire1"><i class="fa fa-twitter"></i></a>
+                </li>                
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/Blood"><i class="fa fa-github"></i></a>
+                </li>
+            </ul>
         </nav>
     </footer>
 

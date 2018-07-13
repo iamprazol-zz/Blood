@@ -5287,7 +5287,7 @@ body{
 footer {
   bottom: 0;
   width: 100%;
-  height: 50px;
+  height: 60px;
   clear: both;
   overflow: hidden;
 }
@@ -5331,4 +5331,9 @@ article img:hover{
 #carouselExampleIndicators{
   margin: auto;
   
+}
+
+.carousel-inner img{
+    background: #007bff;
+    opacity: .5;
 }
