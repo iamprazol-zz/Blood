@@ -122,18 +122,9 @@
 
 
 
-@yield('footer')
+        @extends('footer')
 
-        <footer>
-            <nav class="navbar navbar-expand navbar-light bg-danger">
-                <div class="container">
-
-                    <p>copyright</p>
-
-                </div>
-            </nav>
-        </footer>
-
+<script src="{{ asset('js/shards.js') }}"></script>
 </body>
 </html>
 
