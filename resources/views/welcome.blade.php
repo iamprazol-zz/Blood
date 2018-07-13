@@ -100,6 +100,9 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -110,14 +113,28 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="images/front5.jpg" alt="Second slide">
+            <img class="d-block w-100" src="images/img3.jpg" alt="Second slide">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text-danger">Caption Title</h5>
                 <p class="text-danger">Caption Subtitle</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="images/front3.jpg" alt="Third slide">
+            <img class="d-block w-100" src="images/img2.png" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-danger">Caption Title</h5>
+                <p class="text-danger">Caption Subtitle</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="images/front3.jpg" alt="fourth slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-danger">Caption Title</h5>
+                <p class="text-danger">Caption Subtitle</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="images/front5.jpg" alt="Fifth slide">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text-danger">Caption Title</h5>
                 <p class="text-danger">Caption Subtitle</p>
@@ -303,13 +320,7 @@
     <nav class="navbar navbar-expand navbar-light bg-danger">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                <li><a class="nav-link" href="/forum">Home</a></li>
-                <li><a class="nav-link" href="/groups">Groups</a></li>
-                <li><a class="nav-link" href="/who">Who Can Donate</a></li>
-                <li><a class="nav-link" href="/camps/show">Camps</a></li>
-                <li><a class="nav-link" href="/contact/create">Contact us</a></li>
-            </ul>
+
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="https://facebook.com/"><i class="fa fa-facebook"></i></a></li>
             </ul>

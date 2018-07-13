@@ -128,15 +128,11 @@
     <nav class="navbar navbar-expand navbar-light bg-danger">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                <li><a class="nav-link" href="/forum">Home</a></li>
-                <li><a class="nav-link" href="/groups">Groups</a></li>
-                <li><a class="nav-link" href="/who">Who Can Donate</a></li>
-                <li><a class="nav-link" href="/camps/show">Camps</a></li>
-                <li><a class="nav-link" href="/contact/create">Contact us</a></li>
-            </ul>
+
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="https://facebook.com/easybloodbank"><i class="fa fa-facebook"></i></a></li>
+            </ul>
+        </div>
     </nav>
 </footer>
 
