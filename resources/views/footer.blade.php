@@ -4,20 +4,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .footer {
-            position: fixed;
+            position: absolute;
             left: 0px;
-            bottom: 0px;
+            padding-bottom: 0px;
             height: 50px;
             width: 100%;
-            background: #66cdaa;
+            background:red ;
         }
     </style>
 </head>
 <body>
 
 
-<div class="footer">
+    <div class="footer">
     <p>COPYRIGHT</p>
+</div>
 </div>
 
 </body>
