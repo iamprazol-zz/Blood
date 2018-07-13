@@ -24,7 +24,7 @@ class User extends Authenticatable
 		'dob',
 		'gender',
 		'mobile',
-		'groups_id', 'latitude' , 'longitude' , 'address' , 'verify'
+		'groups_id', 'latitude' , 'longitude' , 'address' , 'verify' , 'citizenship'
 	];
 
 	/**
