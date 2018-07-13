@@ -7,9 +7,11 @@
     <div class="row">
         <div class="col-md-4">
             @if(Auth::check())
+                @if(Auth::user()->is_verified(Auth::user()->id))
             <a href="{{ route('request.create') }}" class=" btn btn-primary">Request for blood</a>
                 <a href="{{ route('groups.search') }}" class=" btn btn-danger">Search for a donor</a>
 <hr>
+                    @endif
             @endif
                 <div class="card sm-hidden">
                     <h4 class="card-header">
@@ -51,11 +53,9 @@
                         <a href="{{ route('request.show' , ['id' => $request->id]) }}" class="btn btn-info btn-pill btn-sm pull-right" style="margin-right: 8px;">View</a>
 
 
+                        @if(Auth::id() == $request->user->id)
 
-                    @if(Auth::id() == $request->user->id)
-
-                            <a href="{{ route('request.edit' , ['id' => $request->id]) }}" class="btn btn-info btn-sm pull-right" style="margin-right: 8px;">Edit</a>
-
+                                    <a href="{{ route('request.edit' , ['id' => $request->id]) }}" class="btn btn-info btn-sm pull-right" style="margin-right: 8px;">Edit</a>
 
                         @endif
 
@@ -81,17 +81,18 @@
 
                         <a href="{{ route('forum.show' , ['id' => $request->groups->id]) }}" class="btn btn-outline-primary btn-pill btn-sm pull-right" style="margin-right: 8px;">{{ $request->groups->b_group }}</a>
 
-                        @if($request->is_user_available())
 
-                            <a href="{{ route('request.unavailable' , ['id' => $request->id]) }}" class="btn btn-danger btn-sm">I can't go &nbsp;&nbsp;<span class="badge-pill badge-outline-dark">{{ $request->available->count() }}</span></a>
+                            @if($request->is_user_available())
 
-                        @else
+                                <a href="{{ route('request.unavailable' , ['id' => $request->id]) }}" class="btn btn-danger btn-sm">I can't go &nbsp;&nbsp;<span class="badge-pill badge-outline-dark">{{ $request->available->count() }}</span></a>
 
-
-                            <a href="{{ route('request.available' , ['id' => $request->id]) }}" class="btn  btn-info btn-sm">I am going &nbsp;&nbsp;<span class="badge-pill badge-outline-dark">{{ $request->available->count() }}</a>
+                            @else
 
 
-                        @endif
+                                <a href="{{ route('request.available' , ['id' => $request->id]) }}" class="btn  btn-info btn-sm">I am going &nbsp;&nbsp;<span class="badge-pill badge-outline-dark">{{ $request->available->count() }}</a>
+
+
+                            @endif
 
                     </div>
 

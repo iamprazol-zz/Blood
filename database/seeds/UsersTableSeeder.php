@@ -26,7 +26,8 @@ class UsersTableSeeder extends Seeder
 			'mobile' => 9821256117,
 			'latitude' => 28.2613485,
 			'longitude' => 83.9721112 ,
-			'address' => 'lamachaur , pokhara'
+			'address' => 'lamachaur , pokhara',
+			'verify' => 'verified'
 		]);
 
 
@@ -43,7 +44,9 @@ class UsersTableSeeder extends Seeder
 			'mobile' => 9845690436,
 			'latitude' => 28.2631308,
 			'longitude' => 83.9932144 ,
-			'address' => 'batulichaur , pokhara'
+			'address' => 'batulichaur , pokhara',
+			'verify' => 'not verified'
+
 		]);
 
 		App\User::create([
@@ -58,7 +61,8 @@ class UsersTableSeeder extends Seeder
 			'mobile' => 9847004480,
 			'latitude' => 28.2245888,
 			'longitude' => 83.9889757  ,
-			'address' => 'chipledhunga , pokhara'
+			'address' => 'chipledhunga , pokhara',
+			'verify' => 'not verified'
 		]);
     }
 }

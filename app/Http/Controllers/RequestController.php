@@ -34,10 +34,19 @@ class RequestController extends Controller
 
 	public function create() {
 
+    	$id = Auth::id();
+
     	$group = Groups::all();
+    	$user = User::where('id',$id)->first();
 
-		return view('request.create')->with('groups' , $group);
 
+    	if($user->is_verified($user->id)) {
+			return view('request.create')->with('groups', $group);
+		} else {
+			Session::flash('cancel' , 'You are still not verified');
+
+			return redirect()->route('forum.index');
+    		}
 	}
 
 	public function store(){
@@ -128,28 +137,47 @@ class RequestController extends Controller
 
 	public function available($id){
 
+    	$uid = Auth::id();
+		$user = User::where('id' , $uid)->first();
 
-    	Available::create([
-    	'requests_id' => $id ,
-		'user_id' => Auth::id()
-		]);
+		if($user->is_verified($uid)) {
+			Available::create([
+				'requests_id' => $id,
+				'user_id' => Auth::id()
+			]);
 
 
-		Session::flash('success' , 'You are going');
+			Session::flash('success', 'You are going');
 
-		return redirect()->back();
+			return redirect()->back();
+		} else {
+			Session::flash('cancel' , 'You are still not verified');
+
+			return redirect()->route('forum.index');
+		}
 	}
 
 
 	public  function unavailable($id){
 
-    	$go = Available::where('requests_id' , $id)->where('user_id' , Auth::id())->first();
+    	$uid = Auth::id();
+		$user = User::where('id' , $uid)->first();
 
-    	$go->delete();
 
-		Session::flash('cancel' , 'You are not going');
+		if($user->is_verified($uid)) {
 
-		return redirect()->back();
+			$go = Available::where('requests_id', $id)->where('user_id', Auth::id())->first();
+
+			$go->delete();
+
+			Session::flash('cancel', 'You are not going');
+
+			return redirect()->back();
+		} else {
+			Session::flash('cancel' , 'You are still not verified');
+
+			return redirect()->route('forum.index');
+		}
 
 
 	}

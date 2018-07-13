@@ -24,7 +24,7 @@ class User extends Authenticatable
 		'dob',
 		'gender',
 		'mobile',
-		'groups_id', 'latitude' , 'longitude' , 'address'
+		'groups_id', 'latitude' , 'longitude' , 'address' , 'verify'
 	];
 
 	/**
@@ -42,6 +42,11 @@ class User extends Authenticatable
 	public function getAge()
 	{
 		return $this->dob->diffInYears(Carbon::now());
+	}
+
+	public function getdob()
+	{
+		return $this->dob->toDateString();
 	}
 
 
@@ -64,6 +69,16 @@ class User extends Authenticatable
 		$user = User::where('id' , $id)->first();
 
 		if($user->admin == 1){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function is_verified($id){
+		$user = User::where('id' , $id)->first();
+
+		if($user->verify == 'verified'){
 			return true;
 		} else {
 			return false;
