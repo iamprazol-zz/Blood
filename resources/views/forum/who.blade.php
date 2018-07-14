@@ -113,7 +113,7 @@
     <div class="card">
                             <h5 class="card-header">Who Can Donate</h5>
                         <div class="card-body  ">
-                        <p class="card-text">
+                            <p class="card-text">
                             <ul class="list-group">
                                 <li>Accident & Injury:– Can donate if otherwise healthy.</li>
                                 <li> Accupunture:– Postpone donation for one year.</li>
@@ -170,17 +170,16 @@
                             </ul>
                             </p>
                         </div>
-    </div>
-</div>
-
-                        <hr>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
     </div>
+</div>
 
 
+</div>
+</div>
 
 
 @endsection

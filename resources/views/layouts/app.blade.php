@@ -140,7 +140,7 @@
                   <a class="nav-link" href="https://twitter.com/anjaangaire1"><i class="fa fa-twitter"></i></a>
                 </li>                
                 <li class="nav-item">
-                  <a class="nav-link" href="https://github.com/Blood"><i class="fa fa-github"></i></a>
+                  <a class="nav-link" href="https://github.com/iamprazol/Blood"><i class="fa fa-github"></i></a>
                 </li>
             </ul>
         </nav>

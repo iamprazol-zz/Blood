@@ -102,8 +102,8 @@
         <div class="carousel-item active">
             <img class="d-block w-100" src="images/front2.jpg" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-white">Blood is Life.</h5>
-                <p>Donate blood to save someone's life.</p>
+                <h5 class="text-danger">Blood is Life.</h5>
+                <p class="text-danger">Donate blood to save someone's life.</p>
             </div>
         </div>
         <div class="carousel-item">
@@ -150,7 +150,7 @@
 <!-- Our services -->
  
 <div id="our-services" class="our-services section py-4">
-        <h3 class="section-title text-center my-5">Our Services</h3>
+        <h3 class="section-title text-center my-5"><span class="after">Our Services</span>  </h3>
         <!-- Features -->
         <div class="features py-4 mb-4">
           <div class="container">
@@ -192,7 +192,7 @@
         <!-- / Features -->
       </div>
       <!-- / Our Services Section -->
-
+<hr>
 <!-- For our team view -->
 <div class="ourteam col-md-12">
     <h3 class="section-title text-center m-5"><span>Our Team </span></h3>
@@ -263,13 +263,16 @@
                         </fieldset>
                     </article>
                 </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-</div>
+
 
 
 <!-- Starting of Contact -->
-
+<hr>
  <!-- Contact Section -->
       <div class="contact section-invert py-4">
         <h3 class="section-title text-center m-5">Contact Us</h3>
