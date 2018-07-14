@@ -53,8 +53,7 @@
 
 
 
-                        <span><img width="50px" src="/avatars/{{ $request->user->avatar }}" /> {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
-                            <a href="{{ route('request.show' , ['id' => $request->id]) }}" class="btn btn-info btn-sm pull-right" style="margin-right: 8px;">View</a>
+                            <span><img width="50px" src="/avatars/{{ $request->user->avatar }}" style="border-radius: 90%; width: 10%;" /> {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b><a href="{{ route('request.show' , ['id' => $request->id]) }}" class="btn btn-info btn-sm pull-right" style="margin-right: 8px;">View</a></span>
 
                                 @if(Auth::id() == $request->user->id)
 

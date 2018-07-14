@@ -61,6 +61,7 @@
 
                         <a class="dropdown-item" href="{{ route('profile.index') }}" >{{ __("My Profile") }}</a>
 
+                        <a class="dropdown-item" href="{{ route('forum.myrequest' , ['id' => Auth::id()]) }}" >{{ __("My Request") }}</a>
 
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();

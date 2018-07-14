@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Groups;
 use App\Requests;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 
 class ForumsController extends Controller
 {
     public function index(){
 
-    	$request = Requests::OrderBy('required_till' , 'asc')->paginate(3);
+    	$today = Carbon::now()->toDateString();
+
+    	$request = Requests::OrderBy('required_till' , 'asc')->where('required_till' , '>=' , $today)->paginate(3);
 		$user = User::all();
     	$group = Groups::all();
     	
@@ -28,7 +31,11 @@ class ForumsController extends Controller
 
 
 	public function show($id){
-		$request = Requests::where('groups_id' , $id)->OrderBy('required_till' , 'asc')->paginate(3);
+
+		$today = Carbon::now()->toDateString();
+
+
+		$request = Requests::where('groups_id' , $id)->OrderBy('required_till' , 'asc')->where('required_till' , '>=' , $today)->paginate(3);
 		$user = User::all();
 		$group = Groups::all();
 
@@ -44,4 +51,18 @@ class ForumsController extends Controller
 	}
 
 
+
+	public function myrequest($id){
+
+		$today = Carbon::now()->toDateString();
+
+
+		$request = Requests::where('user_id' , $id)->OrderBy('required_till' , 'asc')->where('required_till' , '>=' , $today)->paginate(3);
+		$user = User::all();
+		$group = Groups::all();
+
+		return view('forum.myrequest')->with('requests' , $request)
+			->with('groups' , $group)
+			->with('users' , $user);
+	}
 }

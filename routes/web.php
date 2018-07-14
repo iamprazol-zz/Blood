@@ -59,6 +59,12 @@ Route::get('/camps/show' , [
 
 Route::group(['middleware' => 'auth'] , function () {
 
+	Route::get('/forum/myrequest/{id}' , [
+		'uses' => 'ForumsController@myrequest' ,
+		'as' => 'forum.myrequest'
+	]);
+
+
 	Route::get('request/edit/{id}' , [
 		'uses' => 'RequestController@edit' ,
 		'as' => 'request.edit'

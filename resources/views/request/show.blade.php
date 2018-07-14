@@ -47,7 +47,7 @@
 
 
 
-                            <span><img width="50px" src="/avatars/{{ $request->user->avatar }}"/>&nbsp;&nbsp;&nbsp; {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
+                            <span><img width="50px" src="/avatars/{{ $request->user->avatar }}"  style="border-radius: 90%; width: 10%;"/>&nbsp;&nbsp;&nbsp; {{ $request->user->name }} , <b>{{ $request->created_at->diffForHumans() }}</b></span>
 
 
                             @if(Auth::id() == $request->user->id)
