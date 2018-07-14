@@ -266,7 +266,6 @@
             </div>
         </div>
     </div>
-</div>
 
 
 
@@ -279,36 +278,50 @@
         <div class="container py-4">
           <div class="row justify-content-md-center px-4">
             <div class="contact-form col-sm-12 col-md-10 col-lg-7 p-4 mb-4 card">
-              <form>
-                <div class="row">
-                  <div class="col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label for="contactFormFullName">Full Name</label>
-                      <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter your full name">
+                <form  method="post"  action="{{ route('contact.store') }}">
+                    @csrf
+
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                          <label for="name">Full Name</label>
+                            <input id="name" type="text" class="form-control" name="name" required>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                          <label for="email">Email address</label>
+                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"  required>
+
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label for="contactFormEmail">Email address</label>
-                      <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter your email address">
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                            <label for="subjext">Message</label>
+                            <textarea id="subject" type="text" cols="20" rows="10" class="form-control{{ $errors->has('subject') ? ' is-invalid' : '' }}" name="subject" required ></textarea>
+
+                            @if ($errors->has('subject'))
+                                <span class="invalid-feedback">
+                      <strong>{{ $errors->first('subject') }}</strong>
+                  </span>
+                            @endif
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <div class="form-group">
-                        <label for="exampleInputMessage1">Message</label>
-                        <textarea id="exampleInputMessage1" class="form-control mb-4" rows="10" placeholder="Enter your message..." name="message"></textarea>
-                    </div>
-                  </div>
-                </div>
-                <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Send Your Message">
-              </form>
+                    <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Send Your Message">
+                </form>
             </div>
           </div>
         </div>
       </div>
-  </div>
+
 
       <!-- / Contact Section -->
 

@@ -14,6 +14,7 @@
 
                         <ul class="list-group">
                             <li class="list-group-item"><a href="{{ route('admin.index') }}">Manage User</a></li>
+                            <li class="list-group-item"><a href="{{ route('admin.verifyindex') }}">Verify User</a></li>
                             <li class="list-group-item"><a href="{{ route('camps.create') }}">Create a Camp</a></li>
                             <li class="list-group-item"><a href="{{ route('admin.display') }}">Edit a camp</a></li>
                             <li class="list-group-item"><a href="{{ route('admin.contact') }}">Manage Contact us</a></li>

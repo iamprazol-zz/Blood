@@ -45,10 +45,34 @@ class RequestTableSeeder extends Seeder
 		];
 
 
+		$r4 = [
+			'user_id' => 2 ,
+			'groups_id' => 1 ,
+			'required_till' => Carbon::parse('2018-07-22'),
+			'contents' => 'Need for AB -ve blood for a tripper accident victim. The condition of victim is Serious and there is immediate need of blood to stat the operation.',
+			'latitude' => 28.212865,
+			'longitude' => 83.975439,
+			'address' => 'zero , pokhara'
+		];
+
+		$r5 = [
+			'user_id' => 2 ,
+			'groups_id' => 5 ,
+			'required_till' => Carbon::parse('2018-11-22'),
+			'contents' => 'Need for A -ve  blood for a delivery case .The condition of the mother is getting worst due to the continuous loss of blood.',
+			'latitude' => 28.278990,
+			'longitude' => 83.934728 ,
+			'address' => 'hemja , pokhara'
+		];
+
+
         Requests::create($r1);
         Requests::create($r2);
         Requests::create($r3);
+		Requests::create($r4);
+		Requests::create($r5);
 
 
-    }
+
+	}
 }

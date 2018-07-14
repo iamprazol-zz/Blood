@@ -52,7 +52,7 @@ class RequestController extends Controller
 	public function store(){
     	$r = request();
 		$this->validate($r ,[
-			'contents' => 'required|string|min:100' ,
+			'contents' => 'required|string|min:30' ,
 			'required_till' => 'required|date|after:yesterday'
 		]);
 
@@ -99,7 +99,7 @@ class RequestController extends Controller
 
     	$r = request();
     	$this->validate($r , [
-    		'contents' => 'required|string|min:100',
+    		'contents' => 'required|string|min:30',
 			'required_till' => 'required|date|after:yesterday'
 
 		]);
@@ -129,7 +129,7 @@ class RequestController extends Controller
 
 			Session::flash('success', 'Request updated successfully');
 
-			return redirect()->route('forum.show', ['id' => $req->groups_id]);
+			return redirect()->route('forum.show', ['id' => $id]);
 
 	}
 

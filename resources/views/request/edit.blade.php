@@ -20,19 +20,33 @@
 
 
 
-                        <div class="form-group row">
-                           <lable for="contents" class="col-md-4 col-form-label text-md-right">Reason</lable>
 
-                            <div class="col-md-6">
-                            <textarea name="contents" class="form-control" id="contents" cols="30" rows="10"  class="form-control">{{ $requests->contents }}</textarea>
+
+                        <div class="form-group row">
+                            <label for="contents" class="col-md-4 col-form-label text-md-right">{{ __('Reason') }}</label>
+
+                            <div class="col-sm-7">
+                                <textarea id="contents" type="text" cols="20" rows="10" class="form-control{{ $errors->has('contents') ? ' is-invalid' : '' }}" name="contents" required autofocus>{{ $requests->contents}}</textarea>
+                                @if ($errors->has('contents'))
+                                    <span class="invalid-feedback">
+                                                            <strong>{{ $errors->first('contents') }}</strong>
+                                                        </span>
+                                @endif
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <lable for="date" class="col-md-4 col-form-label text-md-right">Required till</lable>
 
-                            <div class="col-md-6">
-                            <input type="date" id="date" class="form-control" name="required_till" value ="{{ $requests->required_till }}" class="form-control"/>
+                        <div class="form-group row">
+                            <label for="required_till" class="col-md-4 col-form-label text-md-right">{{ __('Required Date') }}</label>
+
+                            <div class="col-sm-6">
+                                <input id="required_till" type="date" class="form-control{{ $errors->has('required_till') ? ' is-invalid' : '' }}" name="required_till" value="{{ $requests->required_till }}" required autofocus>
+
+                                @if ($errors->has('required_till'))
+                                    <span class="invalid-feedback">
+                                                            <strong>{{ $errors->first('required_till' , 'Entered date is invalid') }}</strong>
+                                                        </span>
+                                @endif
                             </div>
                         </div>
 

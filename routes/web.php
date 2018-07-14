@@ -27,10 +27,7 @@ Route::get('/forum/show/{id}' , [
 	'as' => 'forum.show'
 ]);
 
-Route::get('/contact/create' , [
-	'uses' => 'ContactController@create' ,
-	'as' => 'contact.create'
-]);
+
 
 
 Route::post('contact/store' , [
