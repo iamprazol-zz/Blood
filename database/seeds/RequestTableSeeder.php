@@ -46,7 +46,7 @@ class RequestTableSeeder extends Seeder
 
 
 		$r4 = [
-			'user_id' => 2 ,
+			'user_id' => 3 ,
 			'groups_id' => 1 ,
 			'required_till' => Carbon::parse('2018-07-22'),
 			'contents' => 'Need for AB -ve blood for a tripper accident victim. The condition of victim is Serious and there is immediate need of blood to stat the operation.',
@@ -56,7 +56,7 @@ class RequestTableSeeder extends Seeder
 		];
 
 		$r5 = [
-			'user_id' => 2 ,
+			'user_id' => 1 ,
 			'groups_id' => 5 ,
 			'required_till' => Carbon::parse('2018-11-22'),
 			'contents' => 'Need for A -ve  blood for a delivery case .The condition of the mother is getting worst due to the continuous loss of blood.',
