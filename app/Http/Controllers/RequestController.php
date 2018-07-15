@@ -123,7 +123,7 @@ class RequestController extends Controller
 
 			$req->save();
 
-			$donors = self::closest($latitude, $longitude, 5)->all();
+			$donors = self::closest($latitude, $longitude, 5)->where('groups_id' , $r->groups_id)->where('id' , '!=' ,Auth::id())->all();
 			Notification::send($donors , new \App\Notifications\NewRequestAdded($req));
 		}
 
@@ -185,7 +185,7 @@ class RequestController extends Controller
 
 
 
-	public static function closest($lat, $lng, $max_distance = 50, $max_locations = 10, $units = 'miles')
+	public static function closest($lat, $lng, $max_distance = 10, $max_locations = 10, $units = 'miles')
 	{
 		/*
 		 *  Allow for changing of units of measurement
@@ -212,6 +212,8 @@ class RequestController extends Controller
 			$lng,
 			$lat
 		);
+
+
 		return  User::selectraw($distance_select)
 			->having( 'distance', '<', $max_distance )
 			->take( $max_locations )
