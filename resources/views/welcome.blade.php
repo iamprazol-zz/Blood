@@ -202,7 +202,7 @@
                         <img src="/images/kabita.jpg" style="width: 155px; height: 150px; border-radius: 50%; float: left;clear: left;">
                         <div class="aside">
                             Email: parajulikabita10@gmail.com<br>
-                            <i class="fa fa-facebook"></i> <a href="https://www.facebook.com/kabita.parajuli.3990" target="">Kabita Parajuli</a><br>
+                            <i class="fa fa-facebook"></i>: <a href="https://www.facebook.com/kabita.parajuli.3990" target="">Kabita Parajuli</a><br>
                             Role: Back-end Developer
                         </div>
                     </fieldset>
