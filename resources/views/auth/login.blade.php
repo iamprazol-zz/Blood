@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
+<style type="text/css">
+    footer{
+        position: fixed;
+        bottom: 0;
+    }
+</style>
     <div class="col-md-8  m-auto">
         <div class="card">
             <div class="card-header">{{ __('Login') }}</div>
