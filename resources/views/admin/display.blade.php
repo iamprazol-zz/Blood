@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<style type="text/css">
+    footer{
+        position: fixed;
+        bottom: 0;
+    }
+</style>
     <div class="row">
 
         <div class="col-md-4">
