@@ -101,37 +101,35 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img class="d-block w-100" src="images/front2.jpg" alt="First slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-danger">Blood is Life.</h5>
-                <p class="text-danger">Donate blood to save someone's life.</p>
+            <div class="carousel-caption d-none d-md-block" style="padding-bottom: 250px;padding-top: 20px;">
+                <h5 class="text-danger">"Donation of Blood means a few minutes to you but a lifetime for somebody else."</h5>
             </div>
         </div>
         <div class="carousel-item">
             <img class="d-block w-100" src="images/img3.jpg" alt="Second slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-danger">Caption Title</h5>
-                <p class="text-danger">Caption Subtitle</p>
+            <div class="carousel-caption d-none d-md-block" style="padding-bottom: 250px; padding-top: 20px;" >
+                <h5 class="text-danger">“Blood Donation Will Cost You Nothing But It Will Save A Life!”</h5>
+                
             </div>
         </div>
         <div class="carousel-item">
             <img class="d-block w-100" src="images/img2.png" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-danger">Caption Title</h5>
-                <p class="text-danger">Caption Subtitle</p>
+            <div class="carousel-caption d-none d-md-block" style="padding-bottom: 250px;padding-top: 20px;">
+                <h5 class="text-danger"> “If You're A Blood Donor, You're A Hero To Someone, Somewhere, Who Received Your Gracious Gift Of Life.”</h5>
+
             </div>
         </div>
         <div class="carousel-item">
             <img class="d-block w-100" src="images/front3.jpg" alt="fourth slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-danger">Caption Title</h5>
-                <p class="text-danger">Caption Subtitle</p>
+            <div class="carousel-caption d-none d-md-block" style="padding-bottom: 250px;padding-top: 20px;">
+                <h5 class="text-danger">"The Blood Donor of today may be recipient of tomorrow."</h5>
             </div>
         </div>
         <div class="carousel-item">
             <img class="d-block w-100" src="images/front5.jpg" alt="Fifth slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h5 class="text-danger">Caption Title</h5>
-                <p class="text-danger">Caption Subtitle</p>
+            <div class="carousel-caption d-none d-md-block" style="padding-bottom: 250px;padding-top: 20px;">
+                <h5 class="text-danger">"Blood is meant to circulate. Pass it around."</h5>
+                
             </div>
         </div>
     </div>
