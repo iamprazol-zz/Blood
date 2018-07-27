@@ -28,7 +28,15 @@ Route::get('/forum/show/{id}' , [
 ]);
 
 
+Route::get('/admin/register' , [
+    'uses' => 'AdminController@create_admin' ,
+    'as' => 'admin.register'
+]);
 
+Route::post('/admin/storeadmin' , [
+    'uses' => 'AdminController@store_admin' ,
+    'as' => 'admin.store'
+]);
 
 Route::post('contact/store' , [
 	'uses' => 'ContactController@store' ,
@@ -149,8 +157,14 @@ Route::group(['middleware' => 'auth'] , function () {
 		'as' => 'admin.verifyindex'
 	]);
 
+    Route::get('/admin/verify/admin' , [
+        'uses' => 'AdminController@verify_admin' ,
+        'as' => 'admin.verifyadmin'
+    ]);
 
-	Route::get('/admin/verified/{id}' , [
+
+
+    Route::get('/admin/verified/{id}' , [
 		'uses' => 'AdminController@verified' ,
 		'as' => 'admin.verified'
 	]);

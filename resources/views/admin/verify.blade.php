@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<style type="text/css">
-    footer{
-        position: fixed;
-        bottom: 0;
-    }
-</style>
+
 
     <div class="col-md-12">
         <div class="row">
@@ -20,6 +15,8 @@
 
                         <ul class="list-group">
                             <li class="list-group-item"><a href="{{ route('admin.index') }}">Manage User</a></li>
+                            <li class="list-group-item"><a href="{{ route('admin.verifyadmin') }}">Verify Admin</a></li>
+
                             <li class="list-group-item"><a href="{{ route('admin.verifyindex') }}">Verify User</a></li>
                             <li class="list-group-item"><a href="{{ route('camps.create') }}">Create a Camp</a></li>
                             <li class="list-group-item"><a href="{{ route('admin.display') }}">Edit a camp</a></li>
@@ -89,7 +86,11 @@
                         </table>
 
                         @if(!$user->is_verified($user->id))
+                            @if($user->admin == 1)
+                            <a href="{{ route('admin.verified' ,[ 'id' => $user->id]) }}" class="btn btn-primary pull-right">Verify user as admin</a>
+                            @else
                             <a href="{{ route('admin.verified' ,[ 'id' => $user->id]) }}" class="btn btn-primary pull-right">Verify user</a>
+                            @endif
                         @endif
 
                     </div>

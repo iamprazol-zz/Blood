@@ -70,36 +70,36 @@ class RegisterController extends Controller
 	 * @return \App\User
 	 */
 	protected function create(array $data )
-	{
-		$maps_url = 'https://' . 'maps.googleapis.com/' . 'maps/api/geocode/json' . '?address=' . urlencode($data['address']);
-		$geo = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($data['address']) . '&sensor=false');
-		$geo = json_decode($geo, true); // Convert the JSON to an array
+    {
+        $maps_url = 'https://' . 'maps.googleapis.com/' . 'maps/api/geocode/json' . '?address=' . urlencode($data['address']);
+        $geo = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($data['address']) . '&sensor=false');
+        $geo = json_decode($geo, true); // Convert the JSON to an array
 
-		if (isset($geo['status']) && ($geo['status'] == 'OK')) {
-			$latitude = $geo['results'][0]['geometry']['location']['lat']; // Latitude
-			$longitude = $geo['results'][0]['geometry']['location']['lng']; // Longitude
+        if (isset($geo['status']) && ($geo['status'] == 'OK')) {
+            $latitude = $geo['results'][0]['geometry']['location']['lat']; // Latitude
+            $longitude = $geo['results'][0]['geometry']['location']['lng']; // Longitude
 
-			$req = request();
-			$file = $req->file('pic');
-			$filename = time() . '.' . $file->getClientOriginalExtension();
-			Image::make($file)->resize(300, 850)->save(public_path('images/' . $filename));
+            $req = request();
+            $file = $req->file('pic');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            Image::make($file)->resize(300, 850)->save(public_path('images/' . $filename));
 
-			return User::create([
-				'name' => $data['name'],
-				'username' => $data['user_name'],
-				'email' => $data['email'],
-				'password' => Hash::make($data['password']),
-				'mobile' => $data['mobile'],
-				'gender' => $data['gender'],
-				'groups_id' => $data['groups_id'],
-				'dob' => Carbon::parse($data['dob']),
-				'latitude' => $latitude,
-				'longitude' => $longitude,
-				'address' => $data['address'] ,
-				'citizenship' => $filename
+            return User::create([
+                'name' => $data['name'],
+                'username' => $data['user_name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'mobile' => $data['mobile'],
+                'gender' => $data['gender'],
+                'groups_id' => $data['groups_id'],
+                'dob' => Carbon::parse($data['dob']),
+                'latitude' => $latitude,
+                'longitude' => $longitude,
+                'address' => $data['address'],
+                'citizenship' => $filename
 
-			]);
-		}
-	}
+            ]);
+        }
+    }
 }
 

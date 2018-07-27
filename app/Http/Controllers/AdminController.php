@@ -5,44 +5,124 @@ use App\Groups;
 use App\User;
 use Auth;
 use App\Camps;
-use Image;
 use Session;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Image;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
 
+    public function create_admin(){
+        return view('admin.registeradmin');
+    }
+
+    public function store_admin()
+    {
+        $req = request();
+
+
+        $this->validate($req, [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+            'mobile' => 'required|numeric',
+            'dob' => 'required|date|before:	-18 years'
+        ]);
+
+        $maps_url = 'https://' . 'maps.googleapis.com/' . 'maps/api/geocode/json' . '?address=' . urlencode($req->address);
+        $geo = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($req->address) . '&sensor=false');
+        $geo = json_decode($geo, true); // Convert the JSON to an array
+
+        if (isset($geo['status']) && ($geo['status'] == 'OK')) {
+            $latitude = $geo['results'][0]['geometry']['location']['lat']; // Latitude
+            $longitude = $geo['results'][0]['geometry']['location']['lng']; // Longitude
+
+            $file = $req->file('pic');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            Image::make($file)->resize(300, 850)->save(public_path('images/' . $filename));
+
+            $user =User::create([
+                'name' => $req->name,
+                'username' => $req->user_name,
+                'email' => $req->email,
+                'password' => Hash::make($req->password),
+                'mobile' => $req->mobile,
+                'gender' => $req->gender,
+                'groups_id' => $req->groups_id,
+                'dob' => Carbon::parse($req->dob),
+                'latitude' => $latitude,
+                'longitude' => $longitude,
+                'address' => $req->address ,
+                'citizenship' => $filename,
+            ]);
+
+            $user->admin = 1;
+            $user->save();
+
+
+
+        }
+        Session::flash('success' , 'Admin registered successfully');
+
+        return redirect()->route('forum.index');
+
+    }
+
     public function index(){
 		$user = Auth::user();
-		if($user->admin) {
-			$u = User::all();
-			$g = Groups::all();
-			return view('admin.index')->with('users' , $u)->with('groups' , $g);
-		}
-		return response('Unauthorized' , 401);
 
-	}
+		if($user->is_verified($user->id)) {
+            if ($user->admin) {
+                $u = User::all();
+                $g = Groups::all();
+                return view('admin.index')->with('users', $u)->with('groups', $g);
+
+                } else {
+                return response('Unauthorized', 401);
+            }
+		} else {
+            Session::flash('cancel', 'You are still not verified');
+            return redirect()->route('forum.index');
+        }
+    }
 
 
 	public function display(){
     	$camp = Camps::OrderBy('id' , 'asc')->get();
 		$user = Auth::user();
-		if($user->admin) {
-			return view('admin.display')->with('camps', $camp);
-		}
+        if($user->is_verified($user->id)) {
+            if($user->admin) {
+                return view('admin.display')->with('camps', $camp);
+
+            } else {
+                return response('Unauthorized', 401);
+            }
+        } else {
+            Session::flash('cancel', 'You are still not verified');
+            return redirect()->route('forum.index');
+        }
 	}
 
 
 	public function edit($id){
     	$user = Auth::user();
-		if($user->admin) {
-			$camp = Camps::where('id' , $id)->first();
-			return view('camps.edit',['id' , $id])->with('camps' , $camp);
-		}
-		return response('Unauthorized' , 401);
+            if($user->is_verified($user->id)) {
 
-	}
+                if ($user->admin) {
+                    $camp = Camps::where('id', $id)->first();
+                    return view('camps.edit', ['id', $id])->with('camps', $camp);
+                } else {
+                    return response('Unauthorized', 401);
+                }
+            } else {
+                Session::flash('cancel' , 'You are still not verified');
+
+                return redirect()->route('forum.index');
+            }
+        }
+
 
 	public function update($id){
 
@@ -152,15 +232,42 @@ class AdminController extends Controller
 	}
 
 
-	public function verify_index(){
-		$user = Auth::user();
-		if($user->admin) {
-			$u = User::where('verify' , 'not verified')->get();
-			$g = Groups::all();
-			return view('admin.verifyindex')->with('users' , $u)->with('groups' , $g);
-		}
-		return response('Unauthorized' , 401);
-	}
+	public function verify_index()
+    {
+        $user = Auth::user();
+        if ($user->is_verified($user->id)) {
+            if ($user->admin) {
+                $u = User::where('verify', 'not verified')->get();
+                $g = Groups::all();
+                return view('admin.verifyindex')->with('users', $u)->with('groups', $g);
+
+            } else {
+                return response('Unauthorized', 401);
+            }
+        } else {
+            Session::flash('cancel', 'You are still not verified');
+            return redirect()->route('forum.index');
+        }
+    }
+
+
+    public function verify_admin()
+    {
+        $user = Auth::user();
+        if ($user->is_verified($user->id)) {
+            if ($user->admin) {
+                $u = User::where('verify', 'not verified')->get();
+                $g = Groups::all();
+                return view('admin.verifyadmin')->with('users', $u)->with('groups', $g);
+
+            } else {
+                return response('Unauthorized', 401);
+            }
+        } else {
+            Session::flash('cancel', 'You are still not verified');
+            return redirect()->route('forum.index');
+        }
+    }
 
 	public function user_view($id){
     	$u = User::where('id' , $id)->first();

@@ -20,6 +20,7 @@
 
                         <ul class="list-group">
                             <li class="list-group-item"><a href="{{ route('admin.index') }}">Manage User</a></li>
+                            <li class="list-group-item"><a href="{{ route('admin.verifyadmin') }}">Verify Admin</a></li>
                             <li class="list-group-item"><a href="{{ route('admin.verifyindex') }}">Verify User</a></li>
                             <li class="list-group-item"><a href="{{ route('camps.create') }}">Create a Camp</a></li>
                             <li class="list-group-item"><a href="{{ route('admin.display') }}">Edit a camp</a></li>
@@ -64,6 +65,7 @@
 
                             <tbody>
                             @foreach($users as $user)
+                                @if(!$user->admin ==1)
                                 <tr>
 
                                     <td>{{ $user->name }}</td>
@@ -79,6 +81,7 @@
 
 
                                 </tr>
+                                @endif
                             @endforeach
                             </tbody>
 
